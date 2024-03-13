@@ -1,7 +1,7 @@
 ---
 title: "BikeShare"
 author: "Eric Mossotti"
-bibliography: references.bib
+bibliography: bikeShare/references.bib
 
 format: html
 toc: true
