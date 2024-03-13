@@ -17,7 +17,9 @@ copyright: "Eric Mossotti"
 
 #### References:
 
--   [@datalic]
+#### [@datalic]
+
+-   
 
     -   [Data License Agreement \| Divvy Bikes](https://divvybikes.com/data-license-agreement)
 
