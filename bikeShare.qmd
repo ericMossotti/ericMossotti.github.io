@@ -224,9 +224,8 @@ cat("Files in ~/tripdata: ",
 ```
 
 ```{r}
-#|label: 'dbplyr install, Quarto Publishing fix'
+#|label: 'dbplyr pkg load, Quarto Publishing fix'
 
-install.packages("dbplyr")
 library(dbplyr)
 ```
 
