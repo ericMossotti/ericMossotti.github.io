@@ -9,7 +9,7 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
-      -href: bikeShare.qmd
+      - href: bikeShare.qmd
         text: Bike Share
       
 
