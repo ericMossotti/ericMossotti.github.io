@@ -1,7 +1,7 @@
 ---
 title: "BikeShare"
 author: "Eric Mossotti"
-bibliography: bikeShare/references.bib
+bibliography: citations/bikeShare/references.bib
 
 format: html
 toc: true
@@ -12,7 +12,7 @@ warning: false
 
 df_print: paged
 
-copyright: "Eric Mossotti"
+copyright: "Eric Mossotti, 2024"
 ---
 
 #### References:
