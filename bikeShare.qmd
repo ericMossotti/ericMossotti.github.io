@@ -3,17 +3,25 @@ title: "BikeShare"
 author: "Eric Mossotti"
 bibliography: citations/bikeShare/references.bib
 
+repo: https://github.com/ericMossotti/ericMossotti.github.io/blob/main/bikeShare.qmd
+
 code-links:
     - text: Project Code
       href: bikeShare.qmd
 
+format: html
 page-layout: full
 
+code-fold: true
+code-copy: hover
+code-overflow: wrap
+code-tools: true
+source: repo
 
-format: html
 toc: true
-toc_float: true
+toc_float: false
 smooth-scroll: true
+
 echo: false
 warning: false
 
@@ -22,17 +30,7 @@ df_print: paged
 copyright: "Eric Mossotti, 2024"
 ---
 
-# Case Study: 
-
-# Bike-Sharing, Rethought
-
-consumption intention\
-commodity consumption\
-customer's involvement, participation, perceived value, consumer's purchase intention
-
-Improving demand for Annual Memberships.
-
-compare to buying a bike?
+# Case Study: Bike-Sharing, Rethought
 
 [@divvyme]
 
@@ -219,8 +217,6 @@ cat("Files now in tempFiles: ",
     fileList)
 ```
 
-might need to fix format below?
-
 ```{r}
 #|label: 'create/write a parquet file dataset'
 
@@ -397,6 +393,8 @@ correctDistinct <- tripset |>
 
 ```{r}
 #|label: 'duplicate correction tibb'
+#|fig-cap: Observation Table
+
 
 tibble::tibble(
     "Original Obs" = original_nobs,
@@ -823,12 +821,18 @@ groupedStats_tsib |>
 ```
 
 ```         
-bikeshare-research.org/api/v1/systems/boston
+bikeshare-research.org/api/v1/systems/chicago
 ```
 
 [Bike Share Map](https://bikesharemap.com/#/8/-87.5771/41.3747/)
 
 [CityBikes: bike sharing networks around the world](https://citybik.es/)
+
+## Interactive Map
+
+```{=html}
+<iframe width = "1000" height = "800" src = "https://bikesharemap.com/#/8/-87.5771/41.3747/" title = "bike-share map"></iframe>
+```
 
 ```{r, eval = FALSE}
 #|label: 'drops duckDB tables'
