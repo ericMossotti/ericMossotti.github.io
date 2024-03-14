@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -138,11 +172,11 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#case-study" id="toc-case-study" class="nav-link active" data-scroll-target="#case-study">Case Study:</a></li>
-  <li><a href="#bike-sharing-rethought" id="toc-bike-sharing-rethought" class="nav-link" data-scroll-target="#bike-sharing-rethought">Bike-Sharing, Rethought</a>
+  <li><a href="#case-study-bike-sharing-rethought" id="toc-case-study-bike-sharing-rethought" class="nav-link active" data-scroll-target="#case-study-bike-sharing-rethought">Case Study: Bike-Sharing, Rethought</a>
   <ul class="collapse">
   <li><a href="#filtering-data-smartly" id="toc-filtering-data-smartly" class="nav-link" data-scroll-target="#filtering-data-smartly">Filtering Data, Smartly</a></li>
   <li><a href="#visualizations" id="toc-visualizations" class="nav-link" data-scroll-target="#visualizations">Visualizations</a></li>
+  <li><a href="#interactive-map" id="toc-interactive-map" class="nav-link" data-scroll-target="#interactive-map">Interactive Map</a></li>
   </ul></li>
   </ul>
 <div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="bikeShare.qmd"><i class="bi bi-link-45deg"></i>Project Code</a></li></ul></div></nav>
@@ -152,7 +186,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">BikeShare</h1>
+<div class="quarto-title-block"><div><h1 class="title">BikeShare</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -175,16 +209,8 @@ div.csl-indent {
 </header>
 
 
-<section id="case-study" class="level1">
-<h1>Case Study:</h1>
-</section>
-<section id="bike-sharing-rethought" class="level1">
-<h1>Bike-Sharing, Rethought</h1>
-<p>consumption intention<br>
-commodity consumption<br>
-customer’s involvement, participation, perceived value, consumer’s purchase intention</p>
-<p>Improving demand for Annual Memberships.</p>
-<p>compare to buying a bike?</p>
+<section id="case-study-bike-sharing-rethought" class="level1">
+<h1>Case Study: Bike-Sharing, Rethought</h1>
 <p><span class="citation" data-cites="divvyme">(<a href="#ref-divvyme" role="doc-biblioref"><span>“Divvy Membership &amp; Pass Options | Divvy Bikes,”</span> n.d.</a>)</span></p>
 <table class="table">
 <caption>Compare options</caption>
@@ -328,31 +354,31 @@ customer’s involvement, participation, perceived value, consumer’s purchase 
 11 tempZips/202311-divvy-tripdata.zip  &lt;NA&gt; application/zip 2023-12-05 18:28:19
 12 tempZips/202312-divvy-tripdata.zip  &lt;NA&gt; application/zip 2024-01-04 19:48:23
        time
-1  0.632337
-2  0.579156
-3  0.871129
-4  0.777805
-5  0.991261
-6  1.389451
-7  1.481383
-8  1.638439
-9  1.673674
-10 1.306569
-11 1.687675
-12 1.469028
-                                                                                                                                                                                                                                                                                                                                                                                                                           headers
-1     HTTP/1.1 200 OK, x-amz-id-2: Hk4xn2bs7lwaLL5QaEuXDvCPpP0uZsEmGnvgY80ie6oFUTZtuY9FXr1JDbVVZb3ODa3KfmGL4NpJV2eCY2kDMA==, x-amz-request-id: YEBZ4CXFBC2CN86B, Date: Thu, 14 Mar 2024 02:32:34 GMT, Last-Modified: Tue, 07 Feb 2023 19:58:38 GMT, ETag: "9d7eeac61d737e017fd33856998aa65c", x-amz-server-side-encryption: AES256, Accept-Ranges: bytes, Content-Type: application/zip, Server: AmazonS3, Content-Length: 6776711
-2     HTTP/1.1 200 OK, x-amz-id-2: UzJBdO3V9P9acpRWDkyPXIeaDXNLyMhkBx7t/nUzu/2m9XEmDN0uNSNFDdYNF/doi5CEQNal8QEa0rYSyq/Wzg==, x-amz-request-id: V80SKSYPMSDTMSP6, Date: Thu, 14 Mar 2024 02:32:33 GMT, Last-Modified: Tue, 07 Mar 2023 22:28:12 GMT, ETag: "4da6b8b19f08c6a4150c49a8a9c32053", x-amz-server-side-encryption: AES256, Accept-Ranges: bytes, Content-Type: application/zip, Server: AmazonS3, Content-Length: 7081095
-3    HTTP/1.1 200 OK, x-amz-id-2: 6BM9WTmTi2kBCye2P1N7W/SjcgCWr2EEDI7dYhkcNr0CZ3A16EGhNdoeHQ0ooxVcc+QId5fIGDk1bT5W2rFJlA==, x-amz-request-id: V80SV6BE8SNKT7ZG, Date: Thu, 14 Mar 2024 02:32:33 GMT, Last-Modified: Thu, 06 Apr 2023 20:38:59 GMT, ETag: "98cd34dd5e0cacc00f0695b7b5bc021c", x-amz-server-side-encryption: AES256, Accept-Ranges: bytes, Content-Type: application/zip, Server: AmazonS3, Content-Length: 10265597
-4    HTTP/1.1 200 OK, x-amz-id-2: 53Xm8NSaFBxaawjCdmb1lQbNig4OLNSIqpYzg59nQ0Jtb88Sc5VS47BKrFISXpb+JshCxIs0JnXkGFycuqfEnw==, x-amz-request-id: YEBQ2P7F4D5VDJBQ, Date: Thu, 14 Mar 2024 02:32:33 GMT, Last-Modified: Thu, 04 May 2023 19:43:25 GMT, ETag: "2823f262b184589b31e04a5a5b16cb81", x-amz-server-side-encryption: AES256, Accept-Ranges: bytes, Content-Type: application/zip, Server: AmazonS3, Content-Length: 15398190
-5  HTTP/1.1 200 OK, x-amz-id-2: Hqc6l7tCPZ+Aqjln29Bs/rylp2rW2sU9zpqeMxtKhxVi7biWncHR5UcAwDkwTlVvzQ18HaAGVoSqWO7v4bZ5Ow==, x-amz-request-id: V80G2BKRFNYT5EB4, Date: Thu, 14 Mar 2024 02:32:33 GMT, Last-Modified: Thu, 08 Jun 2023 22:17:13 GMT, ETag: "fde45f27b7a2ec06da3e371e3c62d285-2", x-amz-server-side-encryption: AES256, Accept-Ranges: bytes, Content-Type: application/zip, Server: AmazonS3, Content-Length: 23442906
-6  HTTP/1.1 200 OK, x-amz-id-2: z5SUr/L+hjBu3zjUsN1/+A2tUi+60fmBx42dUhyR7DtH2rcQ4UXSRyXILH6wdh9Ke2mXhOtfeSlD8oBTVWVhQA==, x-amz-request-id: V80G315EZ3BWRDKM, Date: Thu, 14 Mar 2024 02:32:33 GMT, Last-Modified: Thu, 13 Jul 2023 21:22:44 GMT, ETag: "1ddfdb0ce7870e5f7eeacec67e9af3e6-2", x-amz-server-side-encryption: AES256, Accept-Ranges: bytes, Content-Type: application/zip, Server: AmazonS3, Content-Length: 25661651
-7  HTTP/1.1 200 OK, x-amz-id-2: yJjoQTbsdxmlB2kBnssMIluh3YZJZd/Ar3ZiRMqVZdFPJT8khVTFeLZMaUNi7I3tuk3u4D3H65LwL1lOzYaTKA==, x-amz-request-id: YEBY5APA65Y99WAN, Date: Thu, 14 Mar 2024 02:32:34 GMT, Last-Modified: Mon, 14 Aug 2023 12:28:28 GMT, ETag: "ba6c166bf9580f19206779cb16293fec-2", x-amz-server-side-encryption: AES256, Accept-Ranges: bytes, Content-Type: application/zip, Server: AmazonS3, Content-Length: 28544756
-8  HTTP/1.1 200 OK, x-amz-id-2: jTEoJmfJk52JLGv4w0IvHR+MwCH+vVAql6J4UqrAQieh8EwUWv4kG3YrUtN7aM5nkGrwh92auLSBO3irDER3cQ==, x-amz-request-id: YEBPEWKNDYG4BFFJ, Date: Thu, 14 Mar 2024 02:32:34 GMT, Last-Modified: Thu, 12 Oct 2023 05:35:18 GMT, ETag: "28978e1c05a960d20b6288279ee2bd10-2", x-amz-server-side-encryption: AES256, Accept-Ranges: bytes, Content-Type: application/zip, Server: AmazonS3, Content-Length: 28649391
-9  HTTP/1.1 200 OK, x-amz-id-2: NvduM0yThrpM/33N05BZsU5Vkutr0wY6ZpSnxIOffqGjmlmfXpbQzoeowMySDSC3CcGGwF+kw2AJdOoL0omtkQ==, x-amz-request-id: YEBWS6FQ46FCF5F4, Date: Thu, 14 Mar 2024 02:32:34 GMT, Last-Modified: Thu, 12 Oct 2023 05:35:18 GMT, ETag: "34ac0b42f90a23d313e7b34a8f8a2ae7-2", x-amz-server-side-encryption: AES256, Accept-Ranges: bytes, Content-Type: application/zip, Server: AmazonS3, Content-Length: 24894104
-10 HTTP/1.1 200 OK, x-amz-id-2: vojcRftsoezeTMhyApxWw2lcwdi4fRnJE9RMW1/mGNCsdNESYLR6swpDwSupo7j+K2hakSL6PRf+pCCQ1PN/IA==, x-amz-request-id: YEBT13TVXETM579R, Date: Thu, 14 Mar 2024 02:32:34 GMT, Last-Modified: Mon, 13 Nov 2023 16:38:10 GMT, ETag: "3db172565a038398a6e9cd8dfe044f43-2", x-amz-server-side-encryption: AES256, Accept-Ranges: bytes, Content-Type: application/zip, Server: AmazonS3, Content-Length: 19145928
-11   HTTP/1.1 200 OK, x-amz-id-2: EwoYsVGFdodjxfuY2NX/0OiCQ29cd1RkslY/FPByPm8WqeyGFDjsRxW8hctnuhJlykgQeR4AXA3tTRZbSuk6lQ==, x-amz-request-id: SGC8E3V8B41X1119, Date: Thu, 14 Mar 2024 02:32:35 GMT, Last-Modified: Tue, 05 Dec 2023 18:28:19 GMT, ETag: "af1e60148a489c910dc9687f7134b35d", x-amz-server-side-encryption: AES256, Accept-Ranges: bytes, Content-Type: application/zip, Server: AmazonS3, Content-Length: 13165411
-12    HTTP/1.1 200 OK, x-amz-id-2: BHEP1DtgFAJgtWPY9Bohw1WERRodTh0V2dNkdE/qCNwc/1vW91I2zNR+aXkGcwq+IbAp/EoGsGnC63WQUCdjIA==, x-amz-request-id: YEBWDKXD18ASG0AQ, Date: Thu, 14 Mar 2024 02:32:34 GMT, Last-Modified: Thu, 04 Jan 2024 19:48:23 GMT, ETag: "ddeeab2d6668fe482553965334bf060f", x-amz-server-side-encryption: AES256, Accept-Ranges: bytes, Content-Type: application/zip, Server: AmazonS3, Content-Length: 8419815</code></pre>
+1  0.535646
+2  0.713783
+3  0.666329
+4  0.787308
+5  1.038823
+6  1.078355
+7  1.563192
+8  1.625184
+9  1.938148
+10 1.464783
+11 1.565311
+12 1.192864
+                                                                                                                                                                                                                                                                                                                                                                                                               headers
+1     HTTP/1.1 200 OK, x-amz-id-2: 6jMvrKH/Gmf7WUf7lpmnQ3v7KtHKbL54BFyWYFQ+InFs7FSEFrPEFuVZg9MDdy53YN30VeGiYrQ=, x-amz-request-id: X9G81BDMG68D3MPJ, Date: Thu, 14 Mar 2024 03:34:31 GMT, Last-Modified: Tue, 07 Feb 2023 19:58:38 GMT, ETag: "9d7eeac61d737e017fd33856998aa65c", x-amz-server-side-encryption: AES256, Accept-Ranges: bytes, Content-Type: application/zip, Server: AmazonS3, Content-Length: 6776711
+2     HTTP/1.1 200 OK, x-amz-id-2: 3Dt9Z5zNE0ENE2ri1fe2q7VBYNh7YsiC7AR9SQ3I346vuGkJ0n1JK2uz9entVF4julmZoP5NZqo=, x-amz-request-id: X9G5FZAD6HVKHK39, Date: Thu, 14 Mar 2024 03:34:31 GMT, Last-Modified: Tue, 07 Mar 2023 22:28:12 GMT, ETag: "4da6b8b19f08c6a4150c49a8a9c32053", x-amz-server-side-encryption: AES256, Accept-Ranges: bytes, Content-Type: application/zip, Server: AmazonS3, Content-Length: 7081095
+3    HTTP/1.1 200 OK, x-amz-id-2: HyQ0oEUJVeWo5j6MjshXfbHXpFfAvqi7ys1o4lwp66F/ZscUpBJuSXgdX5oLf7Eat2Kb7SI6Qu0=, x-amz-request-id: X9G1D3CZS4X2BVQC, Date: Thu, 14 Mar 2024 03:34:31 GMT, Last-Modified: Thu, 06 Apr 2023 20:38:59 GMT, ETag: "98cd34dd5e0cacc00f0695b7b5bc021c", x-amz-server-side-encryption: AES256, Accept-Ranges: bytes, Content-Type: application/zip, Server: AmazonS3, Content-Length: 10265597
+4    HTTP/1.1 200 OK, x-amz-id-2: WDYTdOkG4rgemFqNsoVEKsdKTrG6d0dO75/mGrkbIcyNbs7dTAik1NXs38hrwX1pJmu46eWWuD4=, x-amz-request-id: X9GE4VQQQNRYMY7F, Date: Thu, 14 Mar 2024 03:34:31 GMT, Last-Modified: Thu, 04 May 2023 19:43:25 GMT, ETag: "2823f262b184589b31e04a5a5b16cb81", x-amz-server-side-encryption: AES256, Accept-Ranges: bytes, Content-Type: application/zip, Server: AmazonS3, Content-Length: 15398190
+5  HTTP/1.1 200 OK, x-amz-id-2: el8me4SICSuGwUVmP4psvW84b+T0qoS7SYLwv6O6wUoGDWJWo/ioxfKBlu08zVs7VcMpuoaxBaE=, x-amz-request-id: X9G6ZX8YD3NHEW22, Date: Thu, 14 Mar 2024 03:34:31 GMT, Last-Modified: Thu, 08 Jun 2023 22:17:13 GMT, ETag: "fde45f27b7a2ec06da3e371e3c62d285-2", x-amz-server-side-encryption: AES256, Accept-Ranges: bytes, Content-Type: application/zip, Server: AmazonS3, Content-Length: 23442906
+6  HTTP/1.1 200 OK, x-amz-id-2: zENe34eHzkY2lwfxX+vcXXyvJgW0ZckRfvmG1oC/al2U7WluSHNkQz6RqJs5RlVWCnSwUYl60U8=, x-amz-request-id: X9G5S4NWATKCNY87, Date: Thu, 14 Mar 2024 03:34:31 GMT, Last-Modified: Thu, 13 Jul 2023 21:22:44 GMT, ETag: "1ddfdb0ce7870e5f7eeacec67e9af3e6-2", x-amz-server-side-encryption: AES256, Accept-Ranges: bytes, Content-Type: application/zip, Server: AmazonS3, Content-Length: 25661651
+7  HTTP/1.1 200 OK, x-amz-id-2: qdeERfmX25ewnkwsCynqzuo7Xi3ZyF+pjKRez+I6UU8kbd2tR5PtY5lCiIqmWeB7E55f8p7OQHM=, x-amz-request-id: X9GD2HN3HD8GXG67, Date: Thu, 14 Mar 2024 03:34:31 GMT, Last-Modified: Mon, 14 Aug 2023 12:28:28 GMT, ETag: "ba6c166bf9580f19206779cb16293fec-2", x-amz-server-side-encryption: AES256, Accept-Ranges: bytes, Content-Type: application/zip, Server: AmazonS3, Content-Length: 28544756
+8  HTTP/1.1 200 OK, x-amz-id-2: Q4/oUxyxLp9rTxD7KB1HGmJmqlCrK12pVFjgm3CWZgg81HYpDbVJXUZTTeeR0lBZYq3+bos6608=, x-amz-request-id: X9GBXET31G065Q6P, Date: Thu, 14 Mar 2024 03:34:31 GMT, Last-Modified: Thu, 12 Oct 2023 05:35:18 GMT, ETag: "28978e1c05a960d20b6288279ee2bd10-2", x-amz-server-side-encryption: AES256, Accept-Ranges: bytes, Content-Type: application/zip, Server: AmazonS3, Content-Length: 28649391
+9  HTTP/1.1 200 OK, x-amz-id-2: yHYaofV3s0WZ0V4vUxKmNlOinzHM1kNGZY75DHrZmynssrLJd/5UlcuoQxDcn6gEX/+RbW4UlCE=, x-amz-request-id: 6458WJGE8GN2773E, Date: Thu, 14 Mar 2024 03:34:32 GMT, Last-Modified: Thu, 12 Oct 2023 05:35:18 GMT, ETag: "34ac0b42f90a23d313e7b34a8f8a2ae7-2", x-amz-server-side-encryption: AES256, Accept-Ranges: bytes, Content-Type: application/zip, Server: AmazonS3, Content-Length: 24894104
+10 HTTP/1.1 200 OK, x-amz-id-2: eATRgrbYB2Q5jv1yzZG0qHgRHzTiEfEl83qYw4GvukF+5V2UX35OejAeXpn3j2N9jFlIVBPCsRs=, x-amz-request-id: X9G4FF4AW20CNAPK, Date: Thu, 14 Mar 2024 03:34:31 GMT, Last-Modified: Mon, 13 Nov 2023 16:38:10 GMT, ETag: "3db172565a038398a6e9cd8dfe044f43-2", x-amz-server-side-encryption: AES256, Accept-Ranges: bytes, Content-Type: application/zip, Server: AmazonS3, Content-Length: 19145928
+11   HTTP/1.1 200 OK, x-amz-id-2: gq8Cc2qZHOKz4tHP/cq/KafI+eY8pqeGsthff67SCIQpX/8r+jHVL1Wcik42hOa6Z3qcrvlBIPg=, x-amz-request-id: 645FFT691EKMXPTV, Date: Thu, 14 Mar 2024 03:34:32 GMT, Last-Modified: Tue, 05 Dec 2023 18:28:19 GMT, ETag: "af1e60148a489c910dc9687f7134b35d", x-amz-server-side-encryption: AES256, Accept-Ranges: bytes, Content-Type: application/zip, Server: AmazonS3, Content-Length: 13165411
+12    HTTP/1.1 200 OK, x-amz-id-2: 62rxwNmL89MLfH7gsDtrTIHhCXW28N21EGl+tF5S7/3oSsYT6MgOQE6RQSbvL03NqeqLC1+BYxg=, x-amz-request-id: X9G2V7DT37SKG7PP, Date: Thu, 14 Mar 2024 03:34:31 GMT, Last-Modified: Thu, 04 Jan 2024 19:48:23 GMT, ETag: "ddeeab2d6668fe482553965334bf060f", x-amz-server-side-encryption: AES256, Accept-Ranges: bytes, Content-Type: application/zip, Server: AmazonS3, Content-Length: 8419815</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -381,7 +407,6 @@ customer’s involvement, participation, perceived value, consumer’s purchase 
  tempFiles/part-0.parquet</code></pre>
 </div>
 </div>
-<p>might need to fix format below?</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4,331,707 × 14
@@ -549,10 +574,16 @@ customer’s involvement, participation, perceived value, consumer’s purchase 
 </div>
 </div>
 </div>
-<pre><code>bikeshare-research.org/api/v1/systems/boston</code></pre>
+<pre><code>bikeshare-research.org/api/v1/systems/chicago</code></pre>
 <p><a href="https://bikesharemap.com/#/8/-87.5771/41.3747/">Bike Share Map</a></p>
 <p><a href="https://citybik.es/">CityBikes: bike sharing networks around the world</a></p>
+</section>
+<section id="interactive-map" class="level2">
+<h2 class="anchored" data-anchor-id="interactive-map">Interactive Map</h2>
+<iframe width="1000" height="800" src="https://bikesharemap.com/#/8/-87.5771/41.3747/" title="bike-share map"></iframe>
 
+
+<!-- -->
 
 
 </section>
@@ -663,6 +694,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/ericMossotti\.github\.io\/");
@@ -992,7 +1074,871 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb12" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "BikeShare"</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Eric Mossotti"</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> citations/bikeShare/references.bib</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="an">repo:</span><span class="co"> https://github.com/ericMossotti/ericMossotti.github.io/blob/main/bikeShare.qmd</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="an">code-links:</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">    - text: Project Code</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co">      href: bikeShare.qmd</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="an">page-layout:</span><span class="co"> full</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="an">code-fold:</span><span class="co"> true</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="an">code-copy:</span><span class="co"> hover</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="an">code-overflow:</span><span class="co"> wrap</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="an">code-tools:</span><span class="co"> true</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="an">source:</span><span class="co"> repo</span></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> true</span></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a><span class="an">toc_float:</span><span class="co"> false</span></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a><span class="an">smooth-scroll:</span><span class="co"> true</span></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a><span class="an">echo:</span><span class="co"> false</span></span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a><span class="an">warning:</span><span class="co"> false</span></span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a><span class="an">df_print:</span><span class="co"> paged</span></span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a><span class="an">copyright:</span><span class="co"> "Eric Mossotti, 2024"</span></span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a><span class="fu"># Case Study: Bike-Sharing, Rethought</span></span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">@divvyme</span><span class="co">]</span></span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>|                    |       Single Ride       |           Day Pass            |            Divvy             |          Lyft Pink           |</span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>|---------------|:-------------:|:-------------:|:-------------:|:-------------:|</span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a>|                    |    \$1 + \$0.18/min     |          \$18.10/day          |        \$143.90/year         |          \$199/year          |</span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>| Classic bike       | \$1 unlock + \$0.18/min | 3 hours free, then \$0.18/min | 45 min free, then \$0.18/min | 45 min free, then \$0.18/min |</span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>| Scooter            | \$1 unlock + \$0.44/min |   Free unlocks + \$0.44/min   |  Free unlocks + \$0.29/min   |  Free unlocks + \$0.29/min   |</span>
+<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a>| Ebike              | \$1 unlock + \$0.44/min |   Free unlocks + \$0.44/min   |  Free unlocks + \$0.18/min   |  Free unlocks + \$0.18/min   |</span>
+<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a>| Bike Angels        |                         |                               |              y               |              y               |</span>
+<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a>| Rideshare Benefits |                         |                               |                              |              y               |</span>
+<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a>: Compare options</span>
+<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a><span class="fu">#### References:</span></span>
+<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Bike-share research (bikeshare-research.org)</span><span class="co">](https://bikeshare-research.org/#bssid:chicago)</span></span>
+<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Divvy - Wikipedia</span><span class="co">](https://en.wikipedia.org/wiki/Divvy)</span></span>
+<span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Cycling in Chicago - Wikipedia</span><span class="co">](https://en.wikipedia.org/wiki/Cycling_in_Chicago)</span></span>
+<span id="cb12-55"><a href="#cb12-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-56"><a href="#cb12-56" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Home \| Divvy Bikes</span><span class="co">](https://divvybikes.com/)</span></span>
+<span id="cb12-57"><a href="#cb12-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-58"><a href="#cb12-58" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Divvy Membership &amp; Pass Options \| Divvy Bikes</span><span class="co">](https://divvybikes.com/pricing)</span></span>
+<span id="cb12-59"><a href="#cb12-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-60"><a href="#cb12-60" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">@datalic</span><span class="co">]</span></span>
+<span id="cb12-61"><a href="#cb12-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-62"><a href="#cb12-62" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">Data License Agreement \| Divvy Bikes</span><span class="co">](https://divvybikes.com/data-license-agreement)</span></span>
+<span id="cb12-63"><a href="#cb12-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-64"><a href="#cb12-64" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">@motivate</span><span class="co">]</span></span>
+<span id="cb12-65"><a href="#cb12-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-66"><a href="#cb12-66" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">MOTIVATE (motivateco.com)</span><span class="co">](https://motivateco.com/)</span></span>
+<span id="cb12-67"><a href="#cb12-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-68"><a href="#cb12-68" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">@indexof</span><span class="co">]</span></span>
+<span id="cb12-69"><a href="#cb12-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-70"><a href="#cb12-70" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">Index of bucket "divvy-tripdata"</span><span class="co">](https://divvy-tripdata.s3.amazonaws.com/index.html)</span></span>
+<span id="cb12-71"><a href="#cb12-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-72"><a href="#cb12-72" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">@whyduck</span><span class="co">]</span></span>
+<span id="cb12-73"><a href="#cb12-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-74"><a href="#cb12-74" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">Why DuckDB?</span><span class="co">](https://duckdb.org/why_duckdb)</span></span>
+<span id="cb12-75"><a href="#cb12-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-76"><a href="#cb12-76" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">@rforda</span><span class="co">]</span></span>
+<span id="cb12-77"><a href="#cb12-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-78"><a href="#cb12-78" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">R for Data Science: Chapter 22: Arrow</span><span class="co">](https://r4ds.hadley.nz/arrow "Arrow")</span></span>
+<span id="cb12-79"><a href="#cb12-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-80"><a href="#cb12-80" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">@great-ci</span><span class="co">]</span></span>
+<span id="cb12-81"><a href="#cb12-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-82"><a href="#cb12-82" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span><span class="ot">&lt;https://en.wikipedia.org/wiki/Great-circle_distance&gt;</span></span>
+<span id="cb12-83"><a href="#cb12-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-84"><a href="#cb12-84" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">@average2024</span><span class="co">]</span></span>
+<span id="cb12-85"><a href="#cb12-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-86"><a href="#cb12-86" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span><span class="ot">&lt;https://bikingultimate.com/average-bicycle-speed-how-fast-do-cyclists-ride-and-what-affects-their-pace/&gt;</span></span>
+<span id="cb12-87"><a href="#cb12-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-88"><a href="#cb12-88" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, include = FALSE}</span></span>
+<span id="cb12-89"><a href="#cb12-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-90"><a href="#cb12-90" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::opts_chunk$set(message = FALSE, </span></span>
+<span id="cb12-91"><a href="#cb12-91" aria-hidden="true" tabindex="-1"></a><span class="in">                      warning = FALSE)</span></span>
+<span id="cb12-92"><a href="#cb12-92" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-93"><a href="#cb12-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-96"><a href="#cb12-96" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-97"><a href="#cb12-97" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'create lists, download zips'</span></span>
+<span id="cb12-98"><a href="#cb12-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-99"><a href="#cb12-99" aria-hidden="true" tabindex="-1"></a>durls <span class="ot">&lt;-</span></span>
+<span id="cb12-100"><a href="#cb12-100" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sprintf</span>(<span class="st">"https://divvy-tripdata.s3.amazonaws.com/%d-divvy-tripdata.zip"</span>,</span>
+<span id="cb12-101"><a href="#cb12-101" aria-hidden="true" tabindex="-1"></a>            <span class="dv">202301</span><span class="sc">:</span><span class="dv">202312</span>)</span>
+<span id="cb12-102"><a href="#cb12-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-103"><a href="#cb12-103" aria-hidden="true" tabindex="-1"></a><span class="co"># Need some directories to store the files. </span></span>
+<span id="cb12-104"><a href="#cb12-104" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">"tempZips"</span>)</span>
+<span id="cb12-105"><a href="#cb12-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-106"><a href="#cb12-106" aria-hidden="true" tabindex="-1"></a>tempZipPaths <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(<span class="st">"tempZips/%d-divvy-tripdata.zip"</span>,</span>
+<span id="cb12-107"><a href="#cb12-107" aria-hidden="true" tabindex="-1"></a>                     <span class="dv">202301</span><span class="sc">:</span><span class="dv">202312</span>)</span>
+<span id="cb12-108"><a href="#cb12-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-109"><a href="#cb12-109" aria-hidden="true" tabindex="-1"></a><span class="co"># A simple way to download and relocate several files. </span></span>
+<span id="cb12-110"><a href="#cb12-110" aria-hidden="true" tabindex="-1"></a>curl<span class="sc">::</span><span class="fu">multi_download</span>(durls,</span>
+<span id="cb12-111"><a href="#cb12-111" aria-hidden="true" tabindex="-1"></a>                     <span class="at">destfiles =</span> tempZipPaths)</span>
+<span id="cb12-112"><a href="#cb12-112" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-113"><a href="#cb12-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-116"><a href="#cb12-116" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-117"><a href="#cb12-117" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'dir + lists for unz function'</span></span>
+<span id="cb12-118"><a href="#cb12-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-119"><a href="#cb12-119" aria-hidden="true" tabindex="-1"></a><span class="co"># create tempFile directory</span></span>
+<span id="cb12-120"><a href="#cb12-120" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">"tempFiles"</span>)</span>
+<span id="cb12-121"><a href="#cb12-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-122"><a href="#cb12-122" aria-hidden="true" tabindex="-1"></a><span class="co"># create list of tempFile directory paths</span></span>
+<span id="cb12-123"><a href="#cb12-123" aria-hidden="true" tabindex="-1"></a>tempfile_paths <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(<span class="st">"tempFiles/%d-divvy-tripdata.csv"</span>,</span>
+<span id="cb12-124"><a href="#cb12-124" aria-hidden="true" tabindex="-1"></a>                      <span class="dv">202301</span><span class="sc">:</span><span class="dv">202312</span>)</span>
+<span id="cb12-125"><a href="#cb12-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-126"><a href="#cb12-126" aria-hidden="true" tabindex="-1"></a><span class="co"># create CSV file relocation directory</span></span>
+<span id="cb12-127"><a href="#cb12-127" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">"tripdata"</span>)</span>
+<span id="cb12-128"><a href="#cb12-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-129"><a href="#cb12-129" aria-hidden="true" tabindex="-1"></a><span class="co"># create CSV file relocation paths</span></span>
+<span id="cb12-130"><a href="#cb12-130" aria-hidden="true" tabindex="-1"></a>fileList <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(<span class="st">"tripdata/%d-divvy-tripdata.csv"</span>,</span>
+<span id="cb12-131"><a href="#cb12-131" aria-hidden="true" tabindex="-1"></a>                       <span class="dv">202301</span><span class="sc">:</span><span class="dv">202312</span>)</span>
+<span id="cb12-132"><a href="#cb12-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-133"><a href="#cb12-133" aria-hidden="true" tabindex="-1"></a><span class="co"># create CSV list to specify for unzipping</span></span>
+<span id="cb12-134"><a href="#cb12-134" aria-hidden="true" tabindex="-1"></a>fileNames <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(<span class="st">"%d-divvy-tripdata.csv"</span>,</span>
+<span id="cb12-135"><a href="#cb12-135" aria-hidden="true" tabindex="-1"></a>                      <span class="dv">202301</span><span class="sc">:</span><span class="dv">202312</span>)</span>
+<span id="cb12-136"><a href="#cb12-136" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-137"><a href="#cb12-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-140"><a href="#cb12-140" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-141"><a href="#cb12-141" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'view the new directory-file lists'</span></span>
+<span id="cb12-142"><a href="#cb12-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-143"><a href="#cb12-143" aria-hidden="true" tabindex="-1"></a><span class="co"># review address info that was just created</span></span>
+<span id="cb12-144"><a href="#cb12-144" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="st">"URLs"</span> <span class="ot">=</span> durls,</span>
+<span id="cb12-145"><a href="#cb12-145" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Zip File Paths"</span> <span class="ot">=</span> tempZipPaths,</span>
+<span id="cb12-146"><a href="#cb12-146" aria-hidden="true" tabindex="-1"></a>               <span class="st">"File Names"</span> <span class="ot">=</span> fileNames,</span>
+<span id="cb12-147"><a href="#cb12-147" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Parquet File Paths"</span> <span class="ot">=</span> tempfile_paths)</span>
+<span id="cb12-148"><a href="#cb12-148" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-149"><a href="#cb12-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-152"><a href="#cb12-152" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-153"><a href="#cb12-153" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'unzip and relocate function'</span></span>
+<span id="cb12-154"><a href="#cb12-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-155"><a href="#cb12-155" aria-hidden="true" tabindex="-1"></a><span class="co"># A custom function that makes unzipping, converting and relocating files all at once, simple. </span></span>
+<span id="cb12-156"><a href="#cb12-156" aria-hidden="true" tabindex="-1"></a>unz_relocate <span class="ot">&lt;-</span> <span class="cf">function</span> (<span class="at">x =</span> tempfile_paths,</span>
+<span id="cb12-157"><a href="#cb12-157" aria-hidden="true" tabindex="-1"></a>                          <span class="at">y =</span> tempZipPaths,</span>
+<span id="cb12-158"><a href="#cb12-158" aria-hidden="true" tabindex="-1"></a>                          <span class="at">z =</span> fileNames) {</span>
+<span id="cb12-159"><a href="#cb12-159" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq</span>(x)) {</span>
+<span id="cb12-160"><a href="#cb12-160" aria-hidden="true" tabindex="-1"></a>        utils<span class="sc">::</span><span class="fu">unzip</span>(y[i],</span>
+<span id="cb12-161"><a href="#cb12-161" aria-hidden="true" tabindex="-1"></a>                     z[i])</span>
+<span id="cb12-162"><a href="#cb12-162" aria-hidden="true" tabindex="-1"></a>        <span class="fu">file.rename</span>(z[i],</span>
+<span id="cb12-163"><a href="#cb12-163" aria-hidden="true" tabindex="-1"></a>                    x[i])</span>
+<span id="cb12-164"><a href="#cb12-164" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb12-165"><a href="#cb12-165" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-166"><a href="#cb12-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-167"><a href="#cb12-167" aria-hidden="true" tabindex="-1"></a><span class="fu">unz_relocate</span>()</span>
+<span id="cb12-168"><a href="#cb12-168" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-169"><a href="#cb12-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-172"><a href="#cb12-172" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-173"><a href="#cb12-173" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'remove zips folder from working directory'</span></span>
+<span id="cb12-174"><a href="#cb12-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-175"><a href="#cb12-175" aria-hidden="true" tabindex="-1"></a><span class="co"># To remove stored files</span></span>
+<span id="cb12-176"><a href="#cb12-176" aria-hidden="true" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">"tempZips"</span>,</span>
+<span id="cb12-177"><a href="#cb12-177" aria-hidden="true" tabindex="-1"></a>       <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb12-178"><a href="#cb12-178" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-179"><a href="#cb12-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-182"><a href="#cb12-182" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-183"><a href="#cb12-183" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'create tibble from temp CSV'</span></span>
+<span id="cb12-184"><a href="#cb12-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-185"><a href="#cb12-185" aria-hidden="true" tabindex="-1"></a>tripTibble <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">map</span>(tempfile_paths[<span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>],</span>
+<span id="cb12-186"><a href="#cb12-186" aria-hidden="true" tabindex="-1"></a>                         arrow<span class="sc">::</span>read_csv_arrow) <span class="sc">|&gt;</span></span>
+<span id="cb12-187"><a href="#cb12-187" aria-hidden="true" tabindex="-1"></a>    purrr<span class="sc">::</span><span class="fu">list_rbind</span>()</span>
+<span id="cb12-188"><a href="#cb12-188" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-189"><a href="#cb12-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-192"><a href="#cb12-192" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-193"><a href="#cb12-193" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'count raw obs, then drop NAs'</span></span>
+<span id="cb12-194"><a href="#cb12-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-195"><a href="#cb12-195" aria-hidden="true" tabindex="-1"></a>original_nobs <span class="ot">&lt;-</span> <span class="fu">nrow</span>(tripTibble)</span>
+<span id="cb12-196"><a href="#cb12-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-197"><a href="#cb12-197" aria-hidden="true" tabindex="-1"></a>tripTibble <span class="ot">&lt;-</span> tripTibble <span class="sc">|&gt;</span></span>
+<span id="cb12-198"><a href="#cb12-198" aria-hidden="true" tabindex="-1"></a>    tidyr<span class="sc">::</span><span class="fu">drop_na</span>()</span>
+<span id="cb12-199"><a href="#cb12-199" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-200"><a href="#cb12-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-203"><a href="#cb12-203" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-204"><a href="#cb12-204" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'new calculated column for trip time'</span></span>
+<span id="cb12-205"><a href="#cb12-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-206"><a href="#cb12-206" aria-hidden="true" tabindex="-1"></a><span class="co"># to make use of supplied trip interval data</span></span>
+<span id="cb12-207"><a href="#cb12-207" aria-hidden="true" tabindex="-1"></a>tripTibble <span class="sc">|&gt;</span></span>
+<span id="cb12-208"><a href="#cb12-208" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="st">"trip_time"</span> <span class="ot">=</span> lubridate<span class="sc">::</span><span class="fu">time_length</span>(</span>
+<span id="cb12-209"><a href="#cb12-209" aria-hidden="true" tabindex="-1"></a>        lubridate<span class="sc">::</span><span class="fu">interval</span>(started_at,</span>
+<span id="cb12-210"><a href="#cb12-210" aria-hidden="true" tabindex="-1"></a>                            ended_at),</span>
+<span id="cb12-211"><a href="#cb12-211" aria-hidden="true" tabindex="-1"></a>        <span class="at">unit =</span> <span class="st">"minute"</span>), </span>
+<span id="cb12-212"><a href="#cb12-212" aria-hidden="true" tabindex="-1"></a>        <span class="at">.keep =</span> <span class="st">"all"</span></span>
+<span id="cb12-213"><a href="#cb12-213" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb12-214"><a href="#cb12-214" aria-hidden="true" tabindex="-1"></a>    arrow<span class="sc">::</span><span class="fu">write_dataset</span>(<span class="st">"tempFiles"</span>,</span>
+<span id="cb12-215"><a href="#cb12-215" aria-hidden="true" tabindex="-1"></a>                         <span class="at">existing_data_behavior =</span> <span class="st">"delete"</span>)</span>
+<span id="cb12-216"><a href="#cb12-216" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-217"><a href="#cb12-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-220"><a href="#cb12-220" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-221"><a href="#cb12-221" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'removing large tibble from memory'</span></span>
+<span id="cb12-222"><a href="#cb12-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-223"><a href="#cb12-223" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(tripTibble)</span>
+<span id="cb12-224"><a href="#cb12-224" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-225"><a href="#cb12-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-228"><a href="#cb12-228" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-229"><a href="#cb12-229" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'create and view list of files'</span></span>
+<span id="cb12-230"><a href="#cb12-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-231"><a href="#cb12-231" aria-hidden="true" tabindex="-1"></a>fileList <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">path =</span> <span class="st">"tempFiles"</span>,</span>
+<span id="cb12-232"><a href="#cb12-232" aria-hidden="true" tabindex="-1"></a>                              <span class="at">full.names =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb12-233"><a href="#cb12-233" aria-hidden="true" tabindex="-1"></a>                              <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb12-234"><a href="#cb12-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-235"><a href="#cb12-235" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Files now in tempFiles: "</span>,</span>
+<span id="cb12-236"><a href="#cb12-236" aria-hidden="true" tabindex="-1"></a>    <span class="st">"</span><span class="sc">\n\n</span><span class="st">"</span>,</span>
+<span id="cb12-237"><a href="#cb12-237" aria-hidden="true" tabindex="-1"></a>    fileList)</span>
+<span id="cb12-238"><a href="#cb12-238" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-239"><a href="#cb12-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-242"><a href="#cb12-242" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-243"><a href="#cb12-243" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'create/write a parquet file dataset'</span></span>
+<span id="cb12-244"><a href="#cb12-244" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-245"><a href="#cb12-245" aria-hidden="true" tabindex="-1"></a>tripset <span class="ot">&lt;-</span> arrow<span class="sc">::</span><span class="fu">open_dataset</span>(<span class="at">sources =</span> fileList[<span class="dv">1</span>],</span>
+<span id="cb12-246"><a href="#cb12-246" aria-hidden="true" tabindex="-1"></a>                               <span class="at">format =</span> <span class="st">"parquet"</span>)</span>
+<span id="cb12-247"><a href="#cb12-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-248"><a href="#cb12-248" aria-hidden="true" tabindex="-1"></a>tripset <span class="sc">|&gt;</span> arrow<span class="sc">::</span><span class="fu">write_dataset</span>(<span class="at">path =</span> <span class="st">"tripdata"</span>,</span>
+<span id="cb12-249"><a href="#cb12-249" aria-hidden="true" tabindex="-1"></a>                                <span class="at">format =</span> <span class="st">"parquet"</span>)</span>
+<span id="cb12-250"><a href="#cb12-250" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-251"><a href="#cb12-251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-254"><a href="#cb12-254" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-255"><a href="#cb12-255" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'view arrow dataset content'</span></span>
+<span id="cb12-256"><a href="#cb12-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-257"><a href="#cb12-257" aria-hidden="true" tabindex="-1"></a>tripset <span class="sc">|&gt;</span></span>
+<span id="cb12-258"><a href="#cb12-258" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">collect</span>()</span>
+<span id="cb12-259"><a href="#cb12-259" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-260"><a href="#cb12-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-263"><a href="#cb12-263" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-264"><a href="#cb12-264" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'delete CSV directory'</span></span>
+<span id="cb12-265"><a href="#cb12-265" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-266"><a href="#cb12-266" aria-hidden="true" tabindex="-1"></a><span class="co"># all files and folders</span></span>
+<span id="cb12-267"><a href="#cb12-267" aria-hidden="true" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">"tempFiles"</span>, <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb12-268"><a href="#cb12-268" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-269"><a href="#cb12-269" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-272"><a href="#cb12-272" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-273"><a href="#cb12-273" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'open parquet file dataset'</span></span>
+<span id="cb12-274"><a href="#cb12-274" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-275"><a href="#cb12-275" aria-hidden="true" tabindex="-1"></a>tripset <span class="ot">&lt;-</span> arrow<span class="sc">::</span><span class="fu">open_dataset</span>(<span class="at">sources =</span> <span class="st">"tripdata"</span>,</span>
+<span id="cb12-276"><a href="#cb12-276" aria-hidden="true" tabindex="-1"></a>                              <span class="at">format =</span> <span class="st">"parquet"</span>)</span>
+<span id="cb12-277"><a href="#cb12-277" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-278"><a href="#cb12-278" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-281"><a href="#cb12-281" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-282"><a href="#cb12-282" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'create/view list of parquets'</span></span>
+<span id="cb12-283"><a href="#cb12-283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-284"><a href="#cb12-284" aria-hidden="true" tabindex="-1"></a><span class="co"># To verify the location of the extracted data.</span></span>
+<span id="cb12-285"><a href="#cb12-285" aria-hidden="true" tabindex="-1"></a>fileList <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">path =</span> <span class="st">"tripdata"</span>,</span>
+<span id="cb12-286"><a href="#cb12-286" aria-hidden="true" tabindex="-1"></a>                              <span class="at">full.names =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb12-287"><a href="#cb12-287" aria-hidden="true" tabindex="-1"></a>                              <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb12-288"><a href="#cb12-288" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-289"><a href="#cb12-289" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Files in ~/tripdata: "</span>,</span>
+<span id="cb12-290"><a href="#cb12-290" aria-hidden="true" tabindex="-1"></a>    <span class="st">"</span><span class="sc">\n\n</span><span class="st">"</span>,</span>
+<span id="cb12-291"><a href="#cb12-291" aria-hidden="true" tabindex="-1"></a>    fileList)</span>
+<span id="cb12-292"><a href="#cb12-292" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-293"><a href="#cb12-293" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-296"><a href="#cb12-296" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-297"><a href="#cb12-297" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'dbplyr pkg load, Quarto Publishing fix'</span></span>
+<span id="cb12-298"><a href="#cb12-298" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-299"><a href="#cb12-299" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dbplyr)</span>
+<span id="cb12-300"><a href="#cb12-300" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-301"><a href="#cb12-301" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-304"><a href="#cb12-304" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-305"><a href="#cb12-305" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'create dupe-table, count n distinct'</span></span>
+<span id="cb12-306"><a href="#cb12-306" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-307"><a href="#cb12-307" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a separate table used to analyze the observations returned as not distinct (n &gt; 1). This adds an extra column labeled "n".</span></span>
+<span id="cb12-308"><a href="#cb12-308" aria-hidden="true" tabindex="-1"></a>dupeTable <span class="ot">&lt;-</span> tripset <span class="sc">|&gt;</span></span>
+<span id="cb12-309"><a href="#cb12-309" aria-hidden="true" tabindex="-1"></a>    arrow<span class="sc">::</span><span class="fu">to_duckdb</span>() <span class="sc">|&gt;</span></span>
+<span id="cb12-310"><a href="#cb12-310" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(started_at<span class="sc">:</span>end_station_name) <span class="sc">|&gt;</span></span>
+<span id="cb12-311"><a href="#cb12-311" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Counts of unique rows added for column 'n'</span></span>
+<span id="cb12-312"><a href="#cb12-312" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">add_count</span>(started_at,</span>
+<span id="cb12-313"><a href="#cb12-313" aria-hidden="true" tabindex="-1"></a>                     ended_at,</span>
+<span id="cb12-314"><a href="#cb12-314" aria-hidden="true" tabindex="-1"></a>                     start_station_name,</span>
+<span id="cb12-315"><a href="#cb12-315" aria-hidden="true" tabindex="-1"></a>                     end_station_name) <span class="sc">|&gt;</span></span>
+<span id="cb12-316"><a href="#cb12-316" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Only observations that have been duplicated 1 or more </span></span>
+<span id="cb12-317"><a href="#cb12-317" aria-hidden="true" tabindex="-1"></a>    <span class="co"># times are shown</span></span>
+<span id="cb12-318"><a href="#cb12-318" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">filter</span>(n <span class="sc">&gt;</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-319"><a href="#cb12-319" aria-hidden="true" tabindex="-1"></a>    <span class="co"># We want to see all rows, not just one row for each obs</span></span>
+<span id="cb12-320"><a href="#cb12-320" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">ungroup</span>() <span class="sc">|&gt;</span></span>
+<span id="cb12-321"><a href="#cb12-321" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">arrange</span>(started_at) <span class="sc">|&gt;</span></span>
+<span id="cb12-322"><a href="#cb12-322" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">collect</span>()</span>
+<span id="cb12-323"><a href="#cb12-323" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-324"><a href="#cb12-324" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> dupeTable <span class="sc">|&gt;</span> </span>
+<span id="cb12-325"><a href="#cb12-325" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">distinct</span>(n) <span class="sc">|&gt;</span></span>
+<span id="cb12-326"><a href="#cb12-326" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as.integer</span>()</span>
+<span id="cb12-327"><a href="#cb12-327" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-328"><a href="#cb12-328" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-329"><a href="#cb12-329" aria-hidden="true" tabindex="-1"></a>We started with 5,719,877 observations (obs) for dates spanning January to December, 2023, then removed 1,388,170 incomplete obs.</span>
+<span id="cb12-330"><a href="#cb12-330" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-331"><a href="#cb12-331" aria-hidden="true" tabindex="-1"></a>Of the other columns, it seems that the start_time, end_time, start_station, and end_station could show if there are possibly hidden duplicated observations. Those 4 variables combined results in the most granular view of any one observation. Meaning, that data would naturally only have duplicates in error.</span>
+<span id="cb12-332"><a href="#cb12-332" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-333"><a href="#cb12-333" aria-hidden="true" tabindex="-1"></a>I assumed that having the same times/dates and stations for two different ride IDs was a mistake. Although, I do not know how that error would happen. I could have assumed one person could check out multiple bikes at once. In that instance, each bike could be assigned a unique ride_id. That, however, has only happened 18 times over a year. Since it's only one copy every time, that also raises a red flag. I did not notice any other correlations with station_id/name, member_casual, or ride_type for those particular duplicated data.</span>
+<span id="cb12-334"><a href="#cb12-334" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-337"><a href="#cb12-337" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-338"><a href="#cb12-338" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'output to distinct duplicates and total obs'</span></span>
+<span id="cb12-339"><a href="#cb12-339" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-340"><a href="#cb12-340" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">" Distinct copy count of dupes: "</span>, n,</span>
+<span id="cb12-341"><a href="#cb12-341" aria-hidden="true" tabindex="-1"></a>    <span class="st">"</span><span class="sc">\n\n</span><span class="st">"</span>,</span>
+<span id="cb12-342"><a href="#cb12-342" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Total observations that have and are duplicates: "</span>,</span>
+<span id="cb12-343"><a href="#cb12-343" aria-hidden="true" tabindex="-1"></a>       <span class="fu">length</span>(dupeTable[[<span class="dv">1</span>]]))</span>
+<span id="cb12-344"><a href="#cb12-344" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-345"><a href="#cb12-345" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-346"><a href="#cb12-346" aria-hidden="true" tabindex="-1"></a>By applying distinct() on dupeTable, we see the only distinct value is 2. We can safely conclude that, of the duplicates, each has a minimum and maximum of 1 extra copy.</span>
+<span id="cb12-347"><a href="#cb12-347" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-348"><a href="#cb12-348" aria-hidden="true" tabindex="-1"></a>Number of rows in the dupeTable is 36. Because each duplicated observation has one duplicate (n = 2), expected removed nobs is 18. The issue is that we need to get rid of not all 36 rows, but just the 1 extra duplicate observation from each, resulting in the expected 18.</span>
+<span id="cb12-349"><a href="#cb12-349" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-352"><a href="#cb12-352" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-353"><a href="#cb12-353" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'create un-duped table, count rows'</span></span>
+<span id="cb12-354"><a href="#cb12-354" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-355"><a href="#cb12-355" aria-hidden="true" tabindex="-1"></a><span class="co"># The issue is, we need to get rid of not all of these rows, but just the extra duplicate observations. </span></span>
+<span id="cb12-356"><a href="#cb12-356" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-357"><a href="#cb12-357" aria-hidden="true" tabindex="-1"></a><span class="co"># If there were 2 rows of duplicates, we would want to end up with 1 row after removing the extras.</span></span>
+<span id="cb12-358"><a href="#cb12-358" aria-hidden="true" tabindex="-1"></a>undupedTable <span class="ot">&lt;-</span> dupeTable <span class="sc">|&gt;</span></span>
+<span id="cb12-359"><a href="#cb12-359" aria-hidden="true" tabindex="-1"></a>    arrow<span class="sc">::</span><span class="fu">to_duckdb</span>() <span class="sc">|&gt;</span></span>
+<span id="cb12-360"><a href="#cb12-360" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">distinct</span>(started_at,</span>
+<span id="cb12-361"><a href="#cb12-361" aria-hidden="true" tabindex="-1"></a>                     start_station_name,</span>
+<span id="cb12-362"><a href="#cb12-362" aria-hidden="true" tabindex="-1"></a>                     ended_at,</span>
+<span id="cb12-363"><a href="#cb12-363" aria-hidden="true" tabindex="-1"></a>                     end_station_name,</span>
+<span id="cb12-364"><a href="#cb12-364" aria-hidden="true" tabindex="-1"></a>                     <span class="at">.keep_all =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-365"><a href="#cb12-365" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">collect</span>()</span>
+<span id="cb12-366"><a href="#cb12-366" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-367"><a href="#cb12-367" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> undupedTable <span class="sc">|&gt;</span></span>
+<span id="cb12-368"><a href="#cb12-368" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(started_at) <span class="sc">|&gt;</span></span>
+<span id="cb12-369"><a href="#cb12-369" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">distinct</span>() <span class="sc">|&gt;</span></span>
+<span id="cb12-370"><a href="#cb12-370" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">count</span>() <span class="sc">|&gt;</span></span>
+<span id="cb12-371"><a href="#cb12-371" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as.integer</span>()</span>
+<span id="cb12-372"><a href="#cb12-372" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-373"><a href="#cb12-373" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-376"><a href="#cb12-376" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-377"><a href="#cb12-377" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'output distinct obs, n'</span></span>
+<span id="cb12-378"><a href="#cb12-378" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-379"><a href="#cb12-379" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Count of distinct observations: "</span>, n)</span>
+<span id="cb12-380"><a href="#cb12-380" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-381"><a href="#cb12-381" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-384"><a href="#cb12-384" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-385"><a href="#cb12-385" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'count distinct duplicates'</span></span>
+<span id="cb12-386"><a href="#cb12-386" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-387"><a href="#cb12-387" aria-hidden="true" tabindex="-1"></a><span class="co"># The issue is, we need to get rid of not all of these rows, but just the extra duplicate observations. </span></span>
+<span id="cb12-388"><a href="#cb12-388" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-389"><a href="#cb12-389" aria-hidden="true" tabindex="-1"></a><span class="co"># If there were 2 rows of duplicates, we would want to end up with 1 row after removing the extras.</span></span>
+<span id="cb12-390"><a href="#cb12-390" aria-hidden="true" tabindex="-1"></a>undupedTable <span class="ot">&lt;-</span> dupeTable <span class="sc">|&gt;</span></span>
+<span id="cb12-391"><a href="#cb12-391" aria-hidden="true" tabindex="-1"></a>    arrow<span class="sc">::</span><span class="fu">to_duckdb</span>() <span class="sc">|&gt;</span></span>
+<span id="cb12-392"><a href="#cb12-392" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">distinct</span>(started_at,</span>
+<span id="cb12-393"><a href="#cb12-393" aria-hidden="true" tabindex="-1"></a>                     start_station_name,</span>
+<span id="cb12-394"><a href="#cb12-394" aria-hidden="true" tabindex="-1"></a>                     ended_at,</span>
+<span id="cb12-395"><a href="#cb12-395" aria-hidden="true" tabindex="-1"></a>                     end_station_name,</span>
+<span id="cb12-396"><a href="#cb12-396" aria-hidden="true" tabindex="-1"></a>                     <span class="at">.keep_all =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-397"><a href="#cb12-397" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">collect</span>()</span>
+<span id="cb12-398"><a href="#cb12-398" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-399"><a href="#cb12-399" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> undupedTable <span class="sc">|&gt;</span></span>
+<span id="cb12-400"><a href="#cb12-400" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(started_at) <span class="sc">|&gt;</span></span>
+<span id="cb12-401"><a href="#cb12-401" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">distinct</span>() <span class="sc">|&gt;</span></span>
+<span id="cb12-402"><a href="#cb12-402" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">count</span>() <span class="sc">|&gt;</span></span>
+<span id="cb12-403"><a href="#cb12-403" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as.integer</span>()</span>
+<span id="cb12-404"><a href="#cb12-404" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-405"><a href="#cb12-405" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Count of distinct observations: "</span>, n)</span>
+<span id="cb12-406"><a href="#cb12-406" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-407"><a href="#cb12-407" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-408"><a href="#cb12-408" aria-hidden="true" tabindex="-1"></a>The count of observed distinct values for the un-duplicated table was indeed 18. So now, it is time to run a count of how rows/observations are in the dataset. There is a difference, though, concerning the correct amount.</span>
+<span id="cb12-409"><a href="#cb12-409" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-412"><a href="#cb12-412" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-413"><a href="#cb12-413" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'incorrect/correct distinct observations'</span></span>
+<span id="cb12-414"><a href="#cb12-414" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-415"><a href="#cb12-415" aria-hidden="true" tabindex="-1"></a><span class="co"># Run a count on how many rows or observations there are in the dataset.</span></span>
+<span id="cb12-416"><a href="#cb12-416" aria-hidden="true" tabindex="-1"></a>incorrectDistinct <span class="ot">&lt;-</span> tripset <span class="sc">|&gt;</span></span>
+<span id="cb12-417"><a href="#cb12-417" aria-hidden="true" tabindex="-1"></a>    arrow<span class="sc">::</span><span class="fu">to_duckdb</span>() <span class="sc">|&gt;</span></span>
+<span id="cb12-418"><a href="#cb12-418" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">distinct</span>(dplyr<span class="sc">::</span><span class="fu">pick</span>(<span class="st">"ride_id"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb12-419"><a href="#cb12-419" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">count</span>(<span class="at">name =</span> <span class="st">"Incorrect Distinct Observations"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-420"><a href="#cb12-420" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">collect</span>() <span class="sc">|&gt;</span></span>
+<span id="cb12-421"><a href="#cb12-421" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as.integer</span>()</span>
+<span id="cb12-422"><a href="#cb12-422" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-423"><a href="#cb12-423" aria-hidden="true" tabindex="-1"></a>correctDistinct <span class="ot">&lt;-</span> tripset <span class="sc">|&gt;</span></span>
+<span id="cb12-424"><a href="#cb12-424" aria-hidden="true" tabindex="-1"></a>    arrow<span class="sc">::</span><span class="fu">to_duckdb</span>() <span class="sc">|&gt;</span></span>
+<span id="cb12-425"><a href="#cb12-425" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">distinct</span>(</span>
+<span id="cb12-426"><a href="#cb12-426" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">pick</span>(</span>
+<span id="cb12-427"><a href="#cb12-427" aria-hidden="true" tabindex="-1"></a>            <span class="st">"started_at"</span>,</span>
+<span id="cb12-428"><a href="#cb12-428" aria-hidden="true" tabindex="-1"></a>            <span class="st">"start_station_name"</span>,</span>
+<span id="cb12-429"><a href="#cb12-429" aria-hidden="true" tabindex="-1"></a>            <span class="st">"ended_at"</span>,</span>
+<span id="cb12-430"><a href="#cb12-430" aria-hidden="true" tabindex="-1"></a>            <span class="st">"end_station_name"</span></span>
+<span id="cb12-431"><a href="#cb12-431" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb12-432"><a href="#cb12-432" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb12-433"><a href="#cb12-433" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">count</span>() <span class="sc">|&gt;</span></span>
+<span id="cb12-434"><a href="#cb12-434" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">collect</span>() <span class="sc">|&gt;</span></span>
+<span id="cb12-435"><a href="#cb12-435" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as.integer</span>()</span>
+<span id="cb12-436"><a href="#cb12-436" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-437"><a href="#cb12-437" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-440"><a href="#cb12-440" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-441"><a href="#cb12-441" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'duplicate correction tibb'</span></span>
+<span id="cb12-442"><a href="#cb12-442" aria-hidden="true" tabindex="-1"></a><span class="co">#|fig-cap: Observation Table</span></span>
+<span id="cb12-443"><a href="#cb12-443" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-444"><a href="#cb12-444" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-445"><a href="#cb12-445" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
+<span id="cb12-446"><a href="#cb12-446" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Original Obs"</span> <span class="ot">=</span> original_nobs,</span>
+<span id="cb12-447"><a href="#cb12-447" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Uncorrected Complete Obs"</span> <span class="ot">=</span> incorrectDistinct,</span>
+<span id="cb12-448"><a href="#cb12-448" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Corrected Complete Obs"</span> <span class="ot">=</span> correctDistinct,</span>
+<span id="cb12-449"><a href="#cb12-449" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Removed Obs"</span> <span class="ot">=</span> (incorrectDistinct <span class="sc">-</span> correctDistinct)</span>
+<span id="cb12-450"><a href="#cb12-450" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-451"><a href="#cb12-451" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-452"><a href="#cb12-452" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-453"><a href="#cb12-453" aria-hidden="true" tabindex="-1"></a>The incorrect number of observations (nobs) was 4,331,707. The correct nobs after removing duplicated obs was 4,331,689. In short, 18 additional obs were removed.</span>
+<span id="cb12-454"><a href="#cb12-454" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-457"><a href="#cb12-457" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-458"><a href="#cb12-458" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'overwrite file with correct obs'</span></span>
+<span id="cb12-459"><a href="#cb12-459" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-460"><a href="#cb12-460" aria-hidden="true" tabindex="-1"></a>tripset <span class="sc">|&gt;</span></span>
+<span id="cb12-461"><a href="#cb12-461" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(ride_id<span class="sc">:</span>trip_time) <span class="sc">|&gt;</span></span>
+<span id="cb12-462"><a href="#cb12-462" aria-hidden="true" tabindex="-1"></a>    arrow<span class="sc">::</span><span class="fu">to_duckdb</span>() <span class="sc">|&gt;</span></span>
+<span id="cb12-463"><a href="#cb12-463" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">distinct</span>(started_at, </span>
+<span id="cb12-464"><a href="#cb12-464" aria-hidden="true" tabindex="-1"></a>                    start_station_name, </span>
+<span id="cb12-465"><a href="#cb12-465" aria-hidden="true" tabindex="-1"></a>                    ended_at,</span>
+<span id="cb12-466"><a href="#cb12-466" aria-hidden="true" tabindex="-1"></a>                    end_station_name, </span>
+<span id="cb12-467"><a href="#cb12-467" aria-hidden="true" tabindex="-1"></a>                    <span class="at">.keep_all =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-468"><a href="#cb12-468" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">arrange</span>(started_at) <span class="sc">|&gt;</span></span>
+<span id="cb12-469"><a href="#cb12-469" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">collect</span>() <span class="sc">|&gt;</span></span>
+<span id="cb12-470"><a href="#cb12-470" aria-hidden="true" tabindex="-1"></a>    arrow<span class="sc">::</span><span class="fu">write_dataset</span>(</span>
+<span id="cb12-471"><a href="#cb12-471" aria-hidden="true" tabindex="-1"></a>        <span class="at">path =</span> <span class="st">"tripdata"</span>,</span>
+<span id="cb12-472"><a href="#cb12-472" aria-hidden="true" tabindex="-1"></a>        <span class="at">format =</span> <span class="st">"parquet"</span>,</span>
+<span id="cb12-473"><a href="#cb12-473" aria-hidden="true" tabindex="-1"></a>        <span class="at">existing_data_behavior =</span> <span class="st">"overwrite"</span></span>
+<span id="cb12-474"><a href="#cb12-474" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb12-475"><a href="#cb12-475" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-476"><a href="#cb12-476" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-477"><a href="#cb12-477" aria-hidden="true" tabindex="-1"></a>Noting that it was useful for me to retain certain rows at first to determine if there were duplicates.</span>
+<span id="cb12-478"><a href="#cb12-478" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-481"><a href="#cb12-481" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-482"><a href="#cb12-482" aria-hidden="true" tabindex="-1"></a>tripset <span class="ot">&lt;-</span> arrow<span class="sc">::</span><span class="fu">open_dataset</span>(<span class="st">"tripdata"</span>,</span>
+<span id="cb12-483"><a href="#cb12-483" aria-hidden="true" tabindex="-1"></a>                               <span class="at">format =</span> <span class="st">"parquet"</span>)</span>
+<span id="cb12-484"><a href="#cb12-484" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-485"><a href="#cb12-485" aria-hidden="true" tabindex="-1"></a>dbconn <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbConnect</span>(duckdb<span class="sc">::</span><span class="fu">duckdb</span>())</span>
+<span id="cb12-486"><a href="#cb12-486" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-487"><a href="#cb12-487" aria-hidden="true" tabindex="-1"></a><span class="co"># For querying the arrow dataset with the benefits of an OLAP database. </span></span>
+<span id="cb12-488"><a href="#cb12-488" aria-hidden="true" tabindex="-1"></a>duckdb<span class="sc">::</span><span class="fu">duckdb_register_arrow</span>(dbconn,</span>
+<span id="cb12-489"><a href="#cb12-489" aria-hidden="true" tabindex="-1"></a>                              <span class="st">"unfltrd_tripData"</span>,</span>
+<span id="cb12-490"><a href="#cb12-490" aria-hidden="true" tabindex="-1"></a>                              tripset)</span>
+<span id="cb12-491"><a href="#cb12-491" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-492"><a href="#cb12-492" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-493"><a href="#cb12-493" aria-hidden="true" tabindex="-1"></a><span class="fu">## Filtering Data, Smartly</span></span>
+<span id="cb12-494"><a href="#cb12-494" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-495"><a href="#cb12-495" aria-hidden="true" tabindex="-1"></a>To ensure the conclusions are accurate, outliers should be filtered. Negative and very low trip times might skew trends. The underlying reason for very low trip times is somewhat of an unknown. Perhaps people often change their minds?</span>
+<span id="cb12-496"><a href="#cb12-496" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-499"><a href="#cb12-499" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-500"><a href="#cb12-500" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'add/filter distances and speed'</span></span>
+<span id="cb12-501"><a href="#cb12-501" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-502"><a href="#cb12-502" aria-hidden="true" tabindex="-1"></a><span class="co"># imposing sensible limits on the data we wish to include moving forward</span></span>
+<span id="cb12-503"><a href="#cb12-503" aria-hidden="true" tabindex="-1"></a><span class="co"># might as well calculate distance traveled while at it</span></span>
+<span id="cb12-504"><a href="#cb12-504" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">tbl</span>(dbconn,</span>
+<span id="cb12-505"><a href="#cb12-505" aria-hidden="true" tabindex="-1"></a>           <span class="st">"unfltrd_tripData"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-506"><a href="#cb12-506" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">filter</span>(trip_time <span class="sc">&gt;</span> <span class="dv">1</span>,</span>
+<span id="cb12-507"><a href="#cb12-507" aria-hidden="true" tabindex="-1"></a>                  trip_time <span class="sc">&lt;</span> <span class="dv">480</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-508"><a href="#cb12-508" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">collect</span>() <span class="sc">|&gt;</span></span>
+<span id="cb12-509"><a href="#cb12-509" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb12-510"><a href="#cb12-510" aria-hidden="true" tabindex="-1"></a>        <span class="at">miles =</span> geosphere<span class="sc">::</span><span class="fu">distGeo</span>(</span>
+<span id="cb12-511"><a href="#cb12-511" aria-hidden="true" tabindex="-1"></a>            <span class="at">p1 =</span> <span class="fu">cbind</span>(start_lng, start_lat),</span>
+<span id="cb12-512"><a href="#cb12-512" aria-hidden="true" tabindex="-1"></a>            <span class="at">p2 =</span> <span class="fu">cbind</span>(end_lng, end_lat)</span>
+<span id="cb12-513"><a href="#cb12-513" aria-hidden="true" tabindex="-1"></a>        ) <span class="sc">/</span> <span class="dv">1000</span> <span class="sc">*</span> <span class="fl">0.62137119</span>,</span>
+<span id="cb12-514"><a href="#cb12-514" aria-hidden="true" tabindex="-1"></a>        <span class="at">mph =</span> (miles <span class="sc">/</span> (trip_time <span class="sc">/</span> <span class="dv">60</span>))</span>
+<span id="cb12-515"><a href="#cb12-515" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb12-516"><a href="#cb12-516" aria-hidden="true" tabindex="-1"></a>    <span class="co"># It's somewhat nonsensical to rent a bike for distances easily walked. </span></span>
+<span id="cb12-517"><a href="#cb12-517" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Also, there could be randomly generated data.</span></span>
+<span id="cb12-518"><a href="#cb12-518" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">filter</span>(miles <span class="sc">&gt;</span> <span class="fl">0.1</span>,</span>
+<span id="cb12-519"><a href="#cb12-519" aria-hidden="true" tabindex="-1"></a>                  <span class="co"># Seems that pro cyclists average around 20 mph, </span></span>
+<span id="cb12-520"><a href="#cb12-520" aria-hidden="true" tabindex="-1"></a>                  <span class="co"># so I set that as the ceiling.</span></span>
+<span id="cb12-521"><a href="#cb12-521" aria-hidden="true" tabindex="-1"></a>                  mph <span class="sc">&lt;</span> <span class="dv">21</span>,</span>
+<span id="cb12-522"><a href="#cb12-522" aria-hidden="true" tabindex="-1"></a>                  <span class="co"># To account for time spent idling, stoplights and traffic.</span></span>
+<span id="cb12-523"><a href="#cb12-523" aria-hidden="true" tabindex="-1"></a>                  mph <span class="sc">&gt;</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-524"><a href="#cb12-524" aria-hidden="true" tabindex="-1"></a>    duckdb<span class="sc">::</span><span class="fu">dbWriteTable</span>(<span class="at">conn =</span> dbconn,</span>
+<span id="cb12-525"><a href="#cb12-525" aria-hidden="true" tabindex="-1"></a>                         <span class="at">name =</span> <span class="st">"fltrd_tripData"</span>)</span>
+<span id="cb12-526"><a href="#cb12-526" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-527"><a href="#cb12-527" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-528"><a href="#cb12-528" aria-hidden="true" tabindex="-1"></a>Writing the Filtered Parquet File</span>
+<span id="cb12-529"><a href="#cb12-529" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-532"><a href="#cb12-532" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-533"><a href="#cb12-533" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'write fltrdData parquet'</span></span>
+<span id="cb12-534"><a href="#cb12-534" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-535"><a href="#cb12-535" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">tbl</span>(dbconn,</span>
+<span id="cb12-536"><a href="#cb12-536" aria-hidden="true" tabindex="-1"></a>           <span class="st">"fltrd_tripData"</span>)</span>
+<span id="cb12-537"><a href="#cb12-537" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-538"><a href="#cb12-538" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">"fltrdData"</span>)</span>
+<span id="cb12-539"><a href="#cb12-539" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-540"><a href="#cb12-540" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">tbl</span>(dbconn,</span>
+<span id="cb12-541"><a href="#cb12-541" aria-hidden="true" tabindex="-1"></a>           <span class="st">"fltrd_tripData"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-542"><a href="#cb12-542" aria-hidden="true" tabindex="-1"></a>    arrow<span class="sc">::</span><span class="fu">to_arrow</span>() <span class="sc">|&gt;</span></span>
+<span id="cb12-543"><a href="#cb12-543" aria-hidden="true" tabindex="-1"></a>    arrow<span class="sc">::</span><span class="fu">write_parquet</span>(<span class="at">sink =</span> <span class="st">"fltrdData/fltrd.parquet"</span>)</span>
+<span id="cb12-544"><a href="#cb12-544" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-545"><a href="#cb12-545" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-548"><a href="#cb12-548" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-549"><a href="#cb12-549" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'rider count by hour table'</span></span>
+<span id="cb12-550"><a href="#cb12-550" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-551"><a href="#cb12-551" aria-hidden="true" tabindex="-1"></a>hours_of_Riders <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">tbl</span>(dbconn,</span>
+<span id="cb12-552"><a href="#cb12-552" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"fltrd_tripData"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-553"><a href="#cb12-553" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(started_at) <span class="sc">|&gt;</span></span>
+<span id="cb12-554"><a href="#cb12-554" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="st">"hour"</span> <span class="ot">=</span> lubridate<span class="sc">::</span><span class="fu">hour</span>(started_at)) <span class="sc">|&gt;</span></span>
+<span id="cb12-555"><a href="#cb12-555" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">group_by</span>(hour) <span class="sc">|&gt;</span></span>
+<span id="cb12-556"><a href="#cb12-556" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">summarise</span>(<span class="st">"riding"</span> <span class="ot">=</span> dplyr<span class="sc">::</span><span class="fu">count</span>(started_at)) <span class="sc">|&gt;</span></span>
+<span id="cb12-557"><a href="#cb12-557" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">arrange</span>(hour) <span class="sc">|&gt;</span></span>
+<span id="cb12-558"><a href="#cb12-558" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">collect</span>() <span class="sc">|&gt;</span></span>
+<span id="cb12-559"><a href="#cb12-559" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="st">"hour"</span> <span class="ot">=</span> hms<span class="sc">::</span><span class="fu">hms</span>(<span class="at">hours =</span> hour),</span>
+<span id="cb12-560"><a href="#cb12-560" aria-hidden="true" tabindex="-1"></a>                  <span class="st">"hour"</span> <span class="ot">=</span> <span class="fu">format</span>(<span class="fu">strptime</span>(hour, <span class="at">format =</span> <span class="st">"%H"</span>), <span class="st">"%r"</span>),</span>
+<span id="cb12-561"><a href="#cb12-561" aria-hidden="true" tabindex="-1"></a>                  <span class="st">"index"</span> <span class="ot">=</span> <span class="fu">seq</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">24</span>))</span>
+<span id="cb12-562"><a href="#cb12-562" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-563"><a href="#cb12-563" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-566"><a href="#cb12-566" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-567"><a href="#cb12-567" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'radial-column plot'</span></span>
+<span id="cb12-568"><a href="#cb12-568" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-569"><a href="#cb12-569" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(<span class="at">data =</span> hours_of_Riders,</span>
+<span id="cb12-570"><a href="#cb12-570" aria-hidden="true" tabindex="-1"></a>                <span class="at">mapping =</span> ggplot2<span class="sc">::</span><span class="fu">aes</span>(</span>
+<span id="cb12-571"><a href="#cb12-571" aria-hidden="true" tabindex="-1"></a>                    <span class="at">x =</span> <span class="fu">reorder</span>(hour, .data<span class="sc">$</span>index),</span>
+<span id="cb12-572"><a href="#cb12-572" aria-hidden="true" tabindex="-1"></a>                    <span class="at">y =</span> riding,</span>
+<span id="cb12-573"><a href="#cb12-573" aria-hidden="true" tabindex="-1"></a>                    <span class="at">fill =</span> riding</span>
+<span id="cb12-574"><a href="#cb12-574" aria-hidden="true" tabindex="-1"></a>                )) <span class="sc">+</span></span>
+<span id="cb12-575"><a href="#cb12-575" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb12-576"><a href="#cb12-576" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">coord_radial</span>(<span class="at">start =</span> <span class="dv">2</span> <span class="sc">*</span> pi,</span>
+<span id="cb12-577"><a href="#cb12-577" aria-hidden="true" tabindex="-1"></a>                          <span class="at">inner.radius =</span> .<span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb12-578"><a href="#cb12-578" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">xlab</span>(<span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb12-579"><a href="#cb12-579" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">ylab</span>(<span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb12-580"><a href="#cb12-580" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">scale_fill_distiller</span>(<span class="at">palette =</span> <span class="st">'Spectral'</span>,</span>
+<span id="cb12-581"><a href="#cb12-581" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">direction =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb12-582"><a href="#cb12-582" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">labs</span>(</span>
+<span id="cb12-583"><a href="#cb12-583" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> <span class="st">"Average Riders by the Hour of Day"</span>,</span>
+<span id="cb12-584"><a href="#cb12-584" aria-hidden="true" tabindex="-1"></a>        <span class="at">subtitle =</span> <span class="st">"(Jan-Dec 2023)"</span>,</span>
+<span id="cb12-585"><a href="#cb12-585" aria-hidden="true" tabindex="-1"></a>        <span class="at">caption =</span> <span class="st">"Data from cyclistic database."</span>,</span>
+<span id="cb12-586"><a href="#cb12-586" aria-hidden="true" tabindex="-1"></a>        <span class="at">tag =</span> <span class="st">"Figure 1.c"</span></span>
+<span id="cb12-587"><a href="#cb12-587" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb12-588"><a href="#cb12-588" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">theme</span>(</span>
+<span id="cb12-589"><a href="#cb12-589" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> ggplot2<span class="sc">::</span><span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>,<span class="at">lineheight =</span> <span class="dv">4</span>),</span>
+<span id="cb12-590"><a href="#cb12-590" aria-hidden="true" tabindex="-1"></a>        <span class="at">text =</span> ggplot2<span class="sc">::</span><span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"white"</span>),</span>
+<span id="cb12-591"><a href="#cb12-591" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background =</span> ggplot2<span class="sc">::</span><span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"black"</span>),</span>
+<span id="cb12-592"><a href="#cb12-592" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor =</span> ggplot2<span class="sc">::</span><span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"black"</span>),</span>
+<span id="cb12-593"><a href="#cb12-593" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major =</span> ggplot2<span class="sc">::</span><span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"grey10"</span>),</span>
+<span id="cb12-594"><a href="#cb12-594" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.background =</span> ggplot2<span class="sc">::</span><span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"black"</span>),</span>
+<span id="cb12-595"><a href="#cb12-595" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> ggplot2<span class="sc">::</span><span class="fu">element_blank</span>(),</span>
+<span id="cb12-596"><a href="#cb12-596" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.y =</span> ggplot2<span class="sc">::</span><span class="fu">element_blank</span>(),</span>
+<span id="cb12-597"><a href="#cb12-597" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> ggplot2<span class="sc">::</span><span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>,</span>
+<span id="cb12-598"><a href="#cb12-598" aria-hidden="true" tabindex="-1"></a>                                            <span class="at">color =</span> <span class="st">"grey90"</span>),</span>
+<span id="cb12-599"><a href="#cb12-599" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.background =</span> ggplot2<span class="sc">::</span><span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"black"</span>),</span>
+<span id="cb12-600"><a href="#cb12-600" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.ticks =</span> ggplot2<span class="sc">::</span><span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"black"</span>,</span>
+<span id="cb12-601"><a href="#cb12-601" aria-hidden="true" tabindex="-1"></a>                                             <span class="at">linewidth =</span> .<span class="dv">5</span>),</span>
+<span id="cb12-602"><a href="#cb12-602" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.text =</span> ggplot2<span class="sc">::</span><span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">'grey80'</span>,</span>
+<span id="cb12-603"><a href="#cb12-603" aria-hidden="true" tabindex="-1"></a>                                             <span class="at">size =</span> <span class="dv">8</span>),</span>
+<span id="cb12-604"><a href="#cb12-604" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title =</span> ggplot2<span class="sc">::</span><span class="fu">element_blank</span>(),</span>
+<span id="cb12-605"><a href="#cb12-605" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"right"</span>,</span>
+<span id="cb12-606"><a href="#cb12-606" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.justification =</span> <span class="st">"center"</span>,</span>
+<span id="cb12-607"><a href="#cb12-607" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.direction =</span> <span class="st">"vertical"</span></span>
+<span id="cb12-608"><a href="#cb12-608" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb12-609"><a href="#cb12-609" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-610"><a href="#cb12-610" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-613"><a href="#cb12-613" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-614"><a href="#cb12-614" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: "column plot"</span></span>
+<span id="cb12-615"><a href="#cb12-615" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-616"><a href="#cb12-616" aria-hidden="true" tabindex="-1"></a>memberCasuals_monthly  <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">tbl</span>(dbconn,</span>
+<span id="cb12-617"><a href="#cb12-617" aria-hidden="true" tabindex="-1"></a>           <span class="st">"fltrd_tripData"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-618"><a href="#cb12-618" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(started_at,</span>
+<span id="cb12-619"><a href="#cb12-619" aria-hidden="true" tabindex="-1"></a>                  member_casual) <span class="sc">|&gt;</span></span>
+<span id="cb12-620"><a href="#cb12-620" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="st">'month'</span> <span class="ot">=</span> lubridate<span class="sc">::</span><span class="fu">month</span>(started_at)) <span class="sc">|&gt;</span></span>
+<span id="cb12-621"><a href="#cb12-621" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">group_by</span>(month,</span>
+<span id="cb12-622"><a href="#cb12-622" aria-hidden="true" tabindex="-1"></a>                    member_casual) <span class="sc">|&gt;</span></span>
+<span id="cb12-623"><a href="#cb12-623" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">summarize</span>(<span class="st">"riderCount"</span> <span class="ot">=</span> dplyr<span class="sc">::</span><span class="fu">count</span>(member_casual)) <span class="sc">|&gt;</span></span>
+<span id="cb12-624"><a href="#cb12-624" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">arrange</span>(month)</span>
+<span id="cb12-625"><a href="#cb12-625" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-626"><a href="#cb12-626" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">collect</span>(memberCasuals_monthly) <span class="sc">|&gt;</span></span>
+<span id="cb12-627"><a href="#cb12-627" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb12-628"><a href="#cb12-628" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">geom_col</span>(<span class="at">mapping =</span> ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(month),</span>
+<span id="cb12-629"><a href="#cb12-629" aria-hidden="true" tabindex="-1"></a>                                             <span class="at">y =</span> riderCount,</span>
+<span id="cb12-630"><a href="#cb12-630" aria-hidden="true" tabindex="-1"></a>                                             <span class="at">fill =</span> member_casual),</span>
+<span id="cb12-631"><a href="#cb12-631" aria-hidden="true" tabindex="-1"></a>                      <span class="at">color =</span> <span class="st">"black"</span>,</span>
+<span id="cb12-632"><a href="#cb12-632" aria-hidden="true" tabindex="-1"></a>                      <span class="at">position =</span> <span class="st">'dodge2'</span>) <span class="sc">+</span></span>
+<span id="cb12-633"><a href="#cb12-633" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> month.abb,</span>
+<span id="cb12-634"><a href="#cb12-634" aria-hidden="true" tabindex="-1"></a>                              <span class="at">name =</span> <span class="st">"Month"</span>) <span class="sc">+</span></span>
+<span id="cb12-635"><a href="#cb12-635" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">'Set2'</span>) <span class="sc">+</span></span>
+<span id="cb12-636"><a href="#cb12-636" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">theme_dark</span>() <span class="sc">+</span></span>
+<span id="cb12-637"><a href="#cb12-637" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">labs</span>(</span>
+<span id="cb12-638"><a href="#cb12-638" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Monthly Ridership: Members vs Casuals"</span>,</span>
+<span id="cb12-639"><a href="#cb12-639" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"(Jan-Dec 2023)"</span>,</span>
+<span id="cb12-640"><a href="#cb12-640" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Data from cyclistic database."</span>,</span>
+<span id="cb12-641"><a href="#cb12-641" aria-hidden="true" tabindex="-1"></a>    <span class="at">tag =</span> <span class="st">"Figure 1.b"</span>)</span>
+<span id="cb12-642"><a href="#cb12-642" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-643"><a href="#cb12-643" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-644"><a href="#cb12-644" aria-hidden="true" tabindex="-1"></a><span class="fu">## Visualizations</span></span>
+<span id="cb12-645"><a href="#cb12-645" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-646"><a href="#cb12-646" aria-hidden="true" tabindex="-1"></a>for quick reference with using Tsibble syntax</span>
+<span id="cb12-647"><a href="#cb12-647" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-650"><a href="#cb12-650" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-651"><a href="#cb12-651" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'register fltrd data to duckDB'</span></span>
+<span id="cb12-652"><a href="#cb12-652" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-653"><a href="#cb12-653" aria-hidden="true" tabindex="-1"></a>tripset <span class="ot">&lt;-</span> arrow<span class="sc">::</span><span class="fu">open_dataset</span>(<span class="st">"fltrdData"</span>,</span>
+<span id="cb12-654"><a href="#cb12-654" aria-hidden="true" tabindex="-1"></a>                               <span class="at">format =</span> <span class="st">"parquet"</span>)</span>
+<span id="cb12-655"><a href="#cb12-655" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-656"><a href="#cb12-656" aria-hidden="true" tabindex="-1"></a>dbconn <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbConnect</span>(duckdb<span class="sc">::</span><span class="fu">duckdb</span>())</span>
+<span id="cb12-657"><a href="#cb12-657" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-658"><a href="#cb12-658" aria-hidden="true" tabindex="-1"></a><span class="co"># For querying the arrow dataset with the benefits of an OLAP database. </span></span>
+<span id="cb12-659"><a href="#cb12-659" aria-hidden="true" tabindex="-1"></a>duckdb<span class="sc">::</span><span class="fu">duckdb_register_arrow</span>(dbconn,</span>
+<span id="cb12-660"><a href="#cb12-660" aria-hidden="true" tabindex="-1"></a>                              <span class="st">"fltrd_data"</span>,</span>
+<span id="cb12-661"><a href="#cb12-661" aria-hidden="true" tabindex="-1"></a>                              tripset)</span>
+<span id="cb12-662"><a href="#cb12-662" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-663"><a href="#cb12-663" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-666"><a href="#cb12-666" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-667"><a href="#cb12-667" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'grouped tibb'</span></span>
+<span id="cb12-668"><a href="#cb12-668" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-669"><a href="#cb12-669" aria-hidden="true" tabindex="-1"></a>grouped_byDay <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">tbl</span>(dbconn,</span>
+<span id="cb12-670"><a href="#cb12-670" aria-hidden="true" tabindex="-1"></a>                            <span class="st">"fltrd_data"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-671"><a href="#cb12-671" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(started_at,</span>
+<span id="cb12-672"><a href="#cb12-672" aria-hidden="true" tabindex="-1"></a>                  member_casual) <span class="sc">|&gt;</span></span>
+<span id="cb12-673"><a href="#cb12-673" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">collect</span>() <span class="sc">|&gt;</span></span>
+<span id="cb12-674"><a href="#cb12-674" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">started_at =</span> <span class="fu">as.Date</span>(started_at)) <span class="sc">|&gt;</span></span>
+<span id="cb12-675"><a href="#cb12-675" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">group_by</span>(started_at,</span>
+<span id="cb12-676"><a href="#cb12-676" aria-hidden="true" tabindex="-1"></a>                    member_casual) <span class="sc">|&gt;</span></span>
+<span id="cb12-677"><a href="#cb12-677" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">summarize</span>(<span class="at">n =</span> dplyr<span class="sc">::</span><span class="fu">n</span>(),</span>
+<span id="cb12-678"><a href="#cb12-678" aria-hidden="true" tabindex="-1"></a>                     <span class="at">sdev =</span> stats<span class="sc">::</span><span class="fu">sd</span>(n))</span>
+<span id="cb12-679"><a href="#cb12-679" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-680"><a href="#cb12-680" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-683"><a href="#cb12-683" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-684"><a href="#cb12-684" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'grouped tsibb'</span></span>
+<span id="cb12-685"><a href="#cb12-685" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-686"><a href="#cb12-686" aria-hidden="true" tabindex="-1"></a>grouped_tsi <span class="ot">&lt;-</span> grouped_byDay <span class="sc">|&gt;</span></span>
+<span id="cb12-687"><a href="#cb12-687" aria-hidden="true" tabindex="-1"></a>    tsibble<span class="sc">::</span><span class="fu">as_tsibble</span>(<span class="at">key =</span> <span class="fu">c</span>(member_casual,</span>
+<span id="cb12-688"><a href="#cb12-688" aria-hidden="true" tabindex="-1"></a>                                n),</span>
+<span id="cb12-689"><a href="#cb12-689" aria-hidden="true" tabindex="-1"></a>                        <span class="at">index =</span> started_at) <span class="sc">|&gt;</span></span>
+<span id="cb12-690"><a href="#cb12-690" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">arrange</span>(started_at)</span>
+<span id="cb12-691"><a href="#cb12-691" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-692"><a href="#cb12-692" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-695"><a href="#cb12-695" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-696"><a href="#cb12-696" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'scatter plot'</span></span>
+<span id="cb12-697"><a href="#cb12-697" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-698"><a href="#cb12-698" aria-hidden="true" tabindex="-1"></a>grouped_tsi <span class="sc">|&gt;</span> ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(</span>
+<span id="cb12-699"><a href="#cb12-699" aria-hidden="true" tabindex="-1"></a>    <span class="at">mapping =</span> ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> started_at, </span>
+<span id="cb12-700"><a href="#cb12-700" aria-hidden="true" tabindex="-1"></a>                           <span class="at">y =</span> n,</span>
+<span id="cb12-701"><a href="#cb12-701" aria-hidden="true" tabindex="-1"></a>                           <span class="at">color =</span> grouped_tsi<span class="sc">$</span>member_casual</span>
+<span id="cb12-702"><a href="#cb12-702" aria-hidden="true" tabindex="-1"></a>                           )) <span class="sc">+</span></span>
+<span id="cb12-703"><a href="#cb12-703" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb12-704"><a href="#cb12-704" aria-hidden="true" tabindex="-1"></a>                        <span class="at">alpha =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
+<span id="cb12-705"><a href="#cb12-705" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>) <span class="sc">+</span></span>
+<span id="cb12-706"><a href="#cb12-706" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Daily Count by Membership Type"</span>,</span>
+<span id="cb12-707"><a href="#cb12-707" aria-hidden="true" tabindex="-1"></a>                  <span class="at">subtitle =</span> <span class="st">"2023"</span>,</span>
+<span id="cb12-708"><a href="#cb12-708" aria-hidden="true" tabindex="-1"></a>                  <span class="at">x =</span> <span class="st">"Month"</span>,</span>
+<span id="cb12-709"><a href="#cb12-709" aria-hidden="true" tabindex="-1"></a>                  <span class="at">y =</span> <span class="st">"Count"</span>)</span>
+<span id="cb12-710"><a href="#cb12-710" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-711"><a href="#cb12-711" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-714"><a href="#cb12-714" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-715"><a href="#cb12-715" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'line plot'</span></span>
+<span id="cb12-716"><a href="#cb12-716" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-717"><a href="#cb12-717" aria-hidden="true" tabindex="-1"></a>grouped_tsi <span class="sc">|&gt;</span> ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(</span>
+<span id="cb12-718"><a href="#cb12-718" aria-hidden="true" tabindex="-1"></a>    <span class="at">mapping =</span> ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> started_at, </span>
+<span id="cb12-719"><a href="#cb12-719" aria-hidden="true" tabindex="-1"></a>                           <span class="at">y =</span> n,</span>
+<span id="cb12-720"><a href="#cb12-720" aria-hidden="true" tabindex="-1"></a>                           <span class="at">color =</span> grouped_tsi<span class="sc">$</span>member_casual</span>
+<span id="cb12-721"><a href="#cb12-721" aria-hidden="true" tabindex="-1"></a>                           )) <span class="sc">+</span></span>
+<span id="cb12-722"><a href="#cb12-722" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">geom_line</span>(<span class="at">stat =</span> <span class="st">'align'</span>,</span>
+<span id="cb12-723"><a href="#cb12-723" aria-hidden="true" tabindex="-1"></a>                       <span class="at">lineend =</span> <span class="st">'round'</span>,</span>
+<span id="cb12-724"><a href="#cb12-724" aria-hidden="true" tabindex="-1"></a>                       <span class="at">linejoin =</span> <span class="st">'mitre'</span>,</span>
+<span id="cb12-725"><a href="#cb12-725" aria-hidden="true" tabindex="-1"></a>                       <span class="at">linewidth =</span> .<span class="dv">5</span>,</span>
+<span id="cb12-726"><a href="#cb12-726" aria-hidden="true" tabindex="-1"></a>                       <span class="at">alpha =</span> .<span class="dv">8</span>) <span class="sc">+</span></span>
+<span id="cb12-727"><a href="#cb12-727" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Set1"</span>) <span class="sc">+</span></span>
+<span id="cb12-728"><a href="#cb12-728" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Daily Count by Membership Type"</span>,</span>
+<span id="cb12-729"><a href="#cb12-729" aria-hidden="true" tabindex="-1"></a>                  <span class="at">subtitle =</span> <span class="st">"2023"</span>,</span>
+<span id="cb12-730"><a href="#cb12-730" aria-hidden="true" tabindex="-1"></a>                  <span class="at">x =</span> <span class="st">"Year-Month"</span>,</span>
+<span id="cb12-731"><a href="#cb12-731" aria-hidden="true" tabindex="-1"></a>                  <span class="at">y =</span> <span class="st">"Count"</span>)</span>
+<span id="cb12-732"><a href="#cb12-732" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-733"><a href="#cb12-733" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-736"><a href="#cb12-736" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-737"><a href="#cb12-737" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'area plot'</span></span>
+<span id="cb12-738"><a href="#cb12-738" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-739"><a href="#cb12-739" aria-hidden="true" tabindex="-1"></a>grouped_tsi <span class="sc">|&gt;</span> ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(</span>
+<span id="cb12-740"><a href="#cb12-740" aria-hidden="true" tabindex="-1"></a>    <span class="at">mapping =</span> ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> started_at, </span>
+<span id="cb12-741"><a href="#cb12-741" aria-hidden="true" tabindex="-1"></a>                           <span class="at">y =</span> n,</span>
+<span id="cb12-742"><a href="#cb12-742" aria-hidden="true" tabindex="-1"></a>                           <span class="at">fill =</span> grouped_tsi<span class="sc">$</span>member_casual)) <span class="sc">+</span></span>
+<span id="cb12-743"><a href="#cb12-743" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">geom_area</span>(<span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb12-744"><a href="#cb12-744" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">scale_x_date</span>(<span class="at">date_breaks =</span> <span class="st">"month"</span>,</span>
+<span id="cb12-745"><a href="#cb12-745" aria-hidden="true" tabindex="-1"></a>                          <span class="at">minor_breaks =</span> <span class="st">"day"</span>,</span>
+<span id="cb12-746"><a href="#cb12-746" aria-hidden="true" tabindex="-1"></a>                          <span class="at">date_labels =</span> <span class="st">"%b"</span>) <span class="sc">+</span></span>
+<span id="cb12-747"><a href="#cb12-747" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>) <span class="sc">+</span></span>
+<span id="cb12-748"><a href="#cb12-748" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Daily Count by Membership Type"</span>,</span>
+<span id="cb12-749"><a href="#cb12-749" aria-hidden="true" tabindex="-1"></a>                  <span class="at">subtitle =</span> <span class="st">"2023"</span>,</span>
+<span id="cb12-750"><a href="#cb12-750" aria-hidden="true" tabindex="-1"></a>                  <span class="at">x =</span> <span class="st">"Month"</span>,</span>
+<span id="cb12-751"><a href="#cb12-751" aria-hidden="true" tabindex="-1"></a>                  <span class="at">y =</span> <span class="st">"Count"</span>)</span>
+<span id="cb12-752"><a href="#cb12-752" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-753"><a href="#cb12-753" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-756"><a href="#cb12-756" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-757"><a href="#cb12-757" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'histogram plot'</span></span>
+<span id="cb12-758"><a href="#cb12-758" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-759"><a href="#cb12-759" aria-hidden="true" tabindex="-1"></a><span class="co"># query for the histogram plot</span></span>
+<span id="cb12-760"><a href="#cb12-760" aria-hidden="true" tabindex="-1"></a>qry4_histo <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">tbl</span>(dbconn,</span>
+<span id="cb12-761"><a href="#cb12-761" aria-hidden="true" tabindex="-1"></a>           <span class="st">"fltrd_data"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-762"><a href="#cb12-762" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(started_at, member_casual) <span class="sc">|&gt;</span></span>
+<span id="cb12-763"><a href="#cb12-763" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">collect</span>() <span class="sc">|&gt;</span></span>
+<span id="cb12-764"><a href="#cb12-764" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">started_at =</span> <span class="fu">as.Date</span>(started_at)) <span class="sc">|&gt;</span></span>
+<span id="cb12-765"><a href="#cb12-765" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">group_by</span>(member_casual) <span class="sc">|&gt;</span></span>
+<span id="cb12-766"><a href="#cb12-766" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">arrange</span>(started_at)</span>
+<span id="cb12-767"><a href="#cb12-767" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-768"><a href="#cb12-768" aria-hidden="true" tabindex="-1"></a><span class="co"># histogram plot</span></span>
+<span id="cb12-769"><a href="#cb12-769" aria-hidden="true" tabindex="-1"></a>qry4_histo <span class="sc">|&gt;</span> ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(</span>
+<span id="cb12-770"><a href="#cb12-770" aria-hidden="true" tabindex="-1"></a>    <span class="at">mapping =</span> ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> started_at, </span>
+<span id="cb12-771"><a href="#cb12-771" aria-hidden="true" tabindex="-1"></a>                           <span class="at">fill =</span> qry4_histo<span class="sc">$</span>member_casual)) <span class="sc">+</span></span>
+<span id="cb12-772"><a href="#cb12-772" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">geom_histogram</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>,</span>
+<span id="cb12-773"><a href="#cb12-773" aria-hidden="true" tabindex="-1"></a>                            <span class="at">bins =</span> <span class="dv">365</span></span>
+<span id="cb12-774"><a href="#cb12-774" aria-hidden="true" tabindex="-1"></a>                            ) <span class="sc">+</span></span>
+<span id="cb12-775"><a href="#cb12-775" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">scale_x_date</span>(<span class="at">date_breaks =</span> <span class="st">"1 month"</span>,</span>
+<span id="cb12-776"><a href="#cb12-776" aria-hidden="true" tabindex="-1"></a>                          <span class="at">date_minor_breaks =</span> <span class="st">'days'</span>,</span>
+<span id="cb12-777"><a href="#cb12-777" aria-hidden="true" tabindex="-1"></a>                          <span class="at">date_labels =</span> <span class="st">"%b"</span>) <span class="sc">+</span></span>
+<span id="cb12-778"><a href="#cb12-778" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>) <span class="sc">+</span></span>
+<span id="cb12-779"><a href="#cb12-779" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Daily Count by Membership Type"</span>,</span>
+<span id="cb12-780"><a href="#cb12-780" aria-hidden="true" tabindex="-1"></a>                  <span class="at">subtitle =</span> <span class="st">"2023"</span>,</span>
+<span id="cb12-781"><a href="#cb12-781" aria-hidden="true" tabindex="-1"></a>                  <span class="at">x =</span> <span class="st">"Months"</span>,</span>
+<span id="cb12-782"><a href="#cb12-782" aria-hidden="true" tabindex="-1"></a>                  <span class="at">y =</span> <span class="st">"Count"</span>)</span>
+<span id="cb12-783"><a href="#cb12-783" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-784"><a href="#cb12-784" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-787"><a href="#cb12-787" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-788"><a href="#cb12-788" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'grouped stats tibb'</span></span>
+<span id="cb12-789"><a href="#cb12-789" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-790"><a href="#cb12-790" aria-hidden="true" tabindex="-1"></a>groupedStats_byDay <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">tbl</span>(dbconn,</span>
+<span id="cb12-791"><a href="#cb12-791" aria-hidden="true" tabindex="-1"></a>                            <span class="st">"fltrd_data"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-792"><a href="#cb12-792" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(started_at,</span>
+<span id="cb12-793"><a href="#cb12-793" aria-hidden="true" tabindex="-1"></a>                  member_casual,</span>
+<span id="cb12-794"><a href="#cb12-794" aria-hidden="true" tabindex="-1"></a>                  rideable_type,</span>
+<span id="cb12-795"><a href="#cb12-795" aria-hidden="true" tabindex="-1"></a>                  trip_time,</span>
+<span id="cb12-796"><a href="#cb12-796" aria-hidden="true" tabindex="-1"></a>                  miles,</span>
+<span id="cb12-797"><a href="#cb12-797" aria-hidden="true" tabindex="-1"></a>                  mph) <span class="sc">|&gt;</span></span>
+<span id="cb12-798"><a href="#cb12-798" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">collect</span>() <span class="sc">|&gt;</span></span>
+<span id="cb12-799"><a href="#cb12-799" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">started_at =</span> <span class="fu">as.Date</span>(started_at)) <span class="sc">|&gt;</span></span>
+<span id="cb12-800"><a href="#cb12-800" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">group_by</span>(started_at,</span>
+<span id="cb12-801"><a href="#cb12-801" aria-hidden="true" tabindex="-1"></a>                    member_casual,</span>
+<span id="cb12-802"><a href="#cb12-802" aria-hidden="true" tabindex="-1"></a>                    rideable_type) <span class="sc">|&gt;</span></span>
+<span id="cb12-803"><a href="#cb12-803" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">summarize</span>(<span class="at">n =</span> dplyr<span class="sc">::</span><span class="fu">n</span>(),</span>
+<span id="cb12-804"><a href="#cb12-804" aria-hidden="true" tabindex="-1"></a>                     <span class="at">trip_time_Mean =</span> <span class="fu">mean</span>(trip_time),</span>
+<span id="cb12-805"><a href="#cb12-805" aria-hidden="true" tabindex="-1"></a>                     <span class="at">trip_time_stDev =</span> stats<span class="sc">::</span><span class="fu">sd</span>(trip_time),</span>
+<span id="cb12-806"><a href="#cb12-806" aria-hidden="true" tabindex="-1"></a>                     <span class="at">miles_Mean =</span> <span class="fu">mean</span>(miles),</span>
+<span id="cb12-807"><a href="#cb12-807" aria-hidden="true" tabindex="-1"></a>                     <span class="at">miles_stDev =</span> stats<span class="sc">::</span><span class="fu">sd</span>(miles),</span>
+<span id="cb12-808"><a href="#cb12-808" aria-hidden="true" tabindex="-1"></a>                     <span class="at">mph_Mean =</span> <span class="fu">mean</span>(miles),</span>
+<span id="cb12-809"><a href="#cb12-809" aria-hidden="true" tabindex="-1"></a>                     <span class="at">mph_stDev =</span> stats<span class="sc">::</span><span class="fu">sd</span>(mph))</span>
+<span id="cb12-810"><a href="#cb12-810" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-811"><a href="#cb12-811" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-814"><a href="#cb12-814" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-815"><a href="#cb12-815" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'grouped stats tsibb'</span></span>
+<span id="cb12-816"><a href="#cb12-816" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-817"><a href="#cb12-817" aria-hidden="true" tabindex="-1"></a>groupedStats_tsib <span class="ot">&lt;-</span> groupedStats_byDay <span class="sc">|&gt;</span></span>
+<span id="cb12-818"><a href="#cb12-818" aria-hidden="true" tabindex="-1"></a>    tsibble<span class="sc">::</span><span class="fu">as_tsibble</span>(<span class="at">key =</span> <span class="fu">c</span>(member_casual<span class="sc">:</span>mph_stDev),</span>
+<span id="cb12-819"><a href="#cb12-819" aria-hidden="true" tabindex="-1"></a>                        <span class="at">index =</span> started_at) <span class="sc">|&gt;</span></span>
+<span id="cb12-820"><a href="#cb12-820" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">arrange</span>(started_at)</span>
+<span id="cb12-821"><a href="#cb12-821" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-822"><a href="#cb12-822" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-825"><a href="#cb12-825" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-826"><a href="#cb12-826" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'Ribbon-Line Plot'</span></span>
+<span id="cb12-827"><a href="#cb12-827" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-828"><a href="#cb12-828" aria-hidden="true" tabindex="-1"></a>groupedStats_tsib <span class="sc">|&gt;</span> </span>
+<span id="cb12-829"><a href="#cb12-829" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(ggplot2<span class="sc">::</span><span class="fu">aes</span>(started_at,</span>
+<span id="cb12-830"><a href="#cb12-830" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">group =</span>  rideable_type)) <span class="sc">+</span></span>
+<span id="cb12-831"><a href="#cb12-831" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">geom_ribbon</span>(<span class="at">alpha =</span> <span class="fl">0.4</span>,</span>
+<span id="cb12-832"><a href="#cb12-832" aria-hidden="true" tabindex="-1"></a>        ggplot2<span class="sc">::</span><span class="fu">aes</span>(</span>
+<span id="cb12-833"><a href="#cb12-833" aria-hidden="true" tabindex="-1"></a>            <span class="at">ymin =</span> (groupedStats_tsib<span class="sc">$</span>trip_time_Mean <span class="sc">-</span></span>
+<span id="cb12-834"><a href="#cb12-834" aria-hidden="true" tabindex="-1"></a>                groupedStats_tsib<span class="sc">$</span>miles_stDev),</span>
+<span id="cb12-835"><a href="#cb12-835" aria-hidden="true" tabindex="-1"></a>            <span class="at">ymax =</span> (groupedStats_tsib<span class="sc">$</span>trip_time_Mean <span class="sc">+</span></span>
+<span id="cb12-836"><a href="#cb12-836" aria-hidden="true" tabindex="-1"></a>                groupedStats_tsib<span class="sc">$</span>miles_stDev)),</span>
+<span id="cb12-837"><a href="#cb12-837" aria-hidden="true" tabindex="-1"></a>                         <span class="at">fill =</span> <span class="st">'white'</span>) <span class="sc">+</span></span>
+<span id="cb12-838"><a href="#cb12-838" aria-hidden="true" tabindex="-1"></a>        ggplot2<span class="sc">::</span><span class="fu">geom_line</span>(ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">y =</span> trip_time_Mean,</span>
+<span id="cb12-839"><a href="#cb12-839" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">color =</span> rideable_type),</span>
+<span id="cb12-840"><a href="#cb12-840" aria-hidden="true" tabindex="-1"></a>                           <span class="at">alpha =</span> <span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb12-841"><a href="#cb12-841" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">'%B'</span>,</span>
+<span id="cb12-842"><a href="#cb12-842" aria-hidden="true" tabindex="-1"></a>                          <span class="at">date_minor_breaks =</span> <span class="st">'days'</span>,</span>
+<span id="cb12-843"><a href="#cb12-843" aria-hidden="true" tabindex="-1"></a>                          <span class="at">limits =</span> <span class="fu">as.Date</span>(<span class="fu">c</span>(<span class="st">'2023-01-01'</span>, <span class="st">'2024-01-01'</span>))) <span class="sc">+</span></span>
+<span id="cb12-844"><a href="#cb12-844" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">'Pastel1'</span>) <span class="sc">+</span></span>
+<span id="cb12-845"><a href="#cb12-845" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">theme_dark</span>()</span>
+<span id="cb12-846"><a href="#cb12-846" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-847"><a href="#cb12-847" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-850"><a href="#cb12-850" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-851"><a href="#cb12-851" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'Facet-Wrap Plot' </span></span>
+<span id="cb12-852"><a href="#cb12-852" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-853"><a href="#cb12-853" aria-hidden="true" tabindex="-1"></a>groupedStats_byDay <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">tbl</span>(dbconn,</span>
+<span id="cb12-854"><a href="#cb12-854" aria-hidden="true" tabindex="-1"></a>                            <span class="st">"fltrd_data"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-855"><a href="#cb12-855" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(started_at,</span>
+<span id="cb12-856"><a href="#cb12-856" aria-hidden="true" tabindex="-1"></a>                  member_casual,</span>
+<span id="cb12-857"><a href="#cb12-857" aria-hidden="true" tabindex="-1"></a>                  rideable_type,</span>
+<span id="cb12-858"><a href="#cb12-858" aria-hidden="true" tabindex="-1"></a>                  trip_time,</span>
+<span id="cb12-859"><a href="#cb12-859" aria-hidden="true" tabindex="-1"></a>                  miles,</span>
+<span id="cb12-860"><a href="#cb12-860" aria-hidden="true" tabindex="-1"></a>                  mph) <span class="sc">|&gt;</span></span>
+<span id="cb12-861"><a href="#cb12-861" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">collect</span>() <span class="sc">|&gt;</span></span>
+<span id="cb12-862"><a href="#cb12-862" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">started_at =</span> <span class="fu">as.Date</span>(started_at)) <span class="sc">|&gt;</span></span>
+<span id="cb12-863"><a href="#cb12-863" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">group_by</span>(started_at,</span>
+<span id="cb12-864"><a href="#cb12-864" aria-hidden="true" tabindex="-1"></a>                    member_casual,</span>
+<span id="cb12-865"><a href="#cb12-865" aria-hidden="true" tabindex="-1"></a>                    rideable_type) <span class="sc">|&gt;</span></span>
+<span id="cb12-866"><a href="#cb12-866" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">summarize</span>(<span class="at">n =</span> dplyr<span class="sc">::</span><span class="fu">n</span>(),</span>
+<span id="cb12-867"><a href="#cb12-867" aria-hidden="true" tabindex="-1"></a>                     <span class="at">trip_time_Mean =</span> <span class="fu">mean</span>(trip_time),</span>
+<span id="cb12-868"><a href="#cb12-868" aria-hidden="true" tabindex="-1"></a>                     <span class="at">trip_time_stDev =</span> stats<span class="sc">::</span><span class="fu">sd</span>(trip_time),</span>
+<span id="cb12-869"><a href="#cb12-869" aria-hidden="true" tabindex="-1"></a>                     <span class="at">miles_Mean =</span> <span class="fu">mean</span>(miles),</span>
+<span id="cb12-870"><a href="#cb12-870" aria-hidden="true" tabindex="-1"></a>                     <span class="at">miles_stDev =</span> stats<span class="sc">::</span><span class="fu">sd</span>(miles),</span>
+<span id="cb12-871"><a href="#cb12-871" aria-hidden="true" tabindex="-1"></a>                     <span class="at">mph_Mean =</span> <span class="fu">mean</span>(miles),</span>
+<span id="cb12-872"><a href="#cb12-872" aria-hidden="true" tabindex="-1"></a>                     <span class="at">mph_stDev =</span> stats<span class="sc">::</span><span class="fu">sd</span>(mph))</span>
+<span id="cb12-873"><a href="#cb12-873" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-874"><a href="#cb12-874" aria-hidden="true" tabindex="-1"></a>groupedStats_tsib <span class="ot">&lt;-</span> groupedStats_byDay <span class="sc">|&gt;</span></span>
+<span id="cb12-875"><a href="#cb12-875" aria-hidden="true" tabindex="-1"></a>    tsibble<span class="sc">::</span><span class="fu">as_tsibble</span>(<span class="at">key =</span> <span class="fu">c</span>(member_casual<span class="sc">:</span>mph_stDev),</span>
+<span id="cb12-876"><a href="#cb12-876" aria-hidden="true" tabindex="-1"></a>                        <span class="at">index =</span> started_at) <span class="sc">|&gt;</span></span>
+<span id="cb12-877"><a href="#cb12-877" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">arrange</span>(started_at)</span>
+<span id="cb12-878"><a href="#cb12-878" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-879"><a href="#cb12-879" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-880"><a href="#cb12-880" aria-hidden="true" tabindex="-1"></a>groupedStats_tsib <span class="sc">|&gt;</span></span>
+<span id="cb12-881"><a href="#cb12-881" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> started_at,</span>
+<span id="cb12-882"><a href="#cb12-882" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">y =</span> trip_time_Mean,</span>
+<span id="cb12-883"><a href="#cb12-883" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">color =</span> trip_time_Mean)) <span class="sc">+</span></span>
+<span id="cb12-884"><a href="#cb12-884" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">geom_count</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb12-885"><a href="#cb12-885" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">facet_wrap</span>(<span class="sc">~</span>member_casual<span class="sc">+</span>rideable_type) <span class="sc">+</span></span>
+<span id="cb12-886"><a href="#cb12-886" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">scale_x_date</span>(<span class="at">date_minor_breaks =</span> <span class="st">"days"</span>,</span>
+<span id="cb12-887"><a href="#cb12-887" aria-hidden="true" tabindex="-1"></a>                          <span class="at">date_labels =</span> <span class="st">"%b"</span>,</span>
+<span id="cb12-888"><a href="#cb12-888" aria-hidden="true" tabindex="-1"></a>                          <span class="at">breaks =</span> <span class="st">"months"</span>) <span class="sc">+</span></span>
+<span id="cb12-889"><a href="#cb12-889" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">theme</span>(<span class="at">axis.text.x =</span> ggplot2<span class="sc">::</span><span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>,</span>
+<span id="cb12-890"><a href="#cb12-890" aria-hidden="true" tabindex="-1"></a>                                                       <span class="at">hjust =</span> <span class="dv">1</span>),</span>
+<span id="cb12-891"><a href="#cb12-891" aria-hidden="true" tabindex="-1"></a>                   <span class="at">panel.background =</span> ggplot2<span class="sc">::</span><span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">'grey20'</span>),</span>
+<span id="cb12-892"><a href="#cb12-892" aria-hidden="true" tabindex="-1"></a>                   <span class="at">panel.grid.major.y =</span> ggplot2<span class="sc">::</span><span class="fu">element_line</span>(</span>
+<span id="cb12-893"><a href="#cb12-893" aria-hidden="true" tabindex="-1"></a>                       <span class="at">linetype =</span> <span class="st">'dashed'</span>,</span>
+<span id="cb12-894"><a href="#cb12-894" aria-hidden="true" tabindex="-1"></a>                       <span class="at">color =</span> <span class="st">'grey30'</span>),</span>
+<span id="cb12-895"><a href="#cb12-895" aria-hidden="true" tabindex="-1"></a>                   <span class="at">panel.grid.major.x =</span> ggplot2<span class="sc">::</span><span class="fu">element_line</span>(</span>
+<span id="cb12-896"><a href="#cb12-896" aria-hidden="true" tabindex="-1"></a>                       <span class="at">linetype =</span> <span class="st">'dotted'</span>,</span>
+<span id="cb12-897"><a href="#cb12-897" aria-hidden="true" tabindex="-1"></a>                       <span class="at">color =</span> <span class="st">'grey30'</span>),</span>
+<span id="cb12-898"><a href="#cb12-898" aria-hidden="true" tabindex="-1"></a>                   <span class="at">panel.grid.minor =</span> ggplot2<span class="sc">::</span><span class="fu">element_blank</span>(),</span>
+<span id="cb12-899"><a href="#cb12-899" aria-hidden="true" tabindex="-1"></a>                   <span class="at">strip.background.x =</span> ggplot2<span class="sc">::</span><span class="fu">element_rect</span>(</span>
+<span id="cb12-900"><a href="#cb12-900" aria-hidden="true" tabindex="-1"></a>                       <span class="at">fill =</span> <span class="st">'yellowgreen'</span>)) <span class="sc">+</span></span>
+<span id="cb12-901"><a href="#cb12-901" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">scale_color_distiller</span>(<span class="at">palette =</span> <span class="st">'Spectral'</span>)</span>
+<span id="cb12-902"><a href="#cb12-902" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-903"><a href="#cb12-903" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-904"><a href="#cb12-904" aria-hidden="true" tabindex="-1"></a><span class="in">```         </span></span>
+<span id="cb12-905"><a href="#cb12-905" aria-hidden="true" tabindex="-1"></a><span class="in">bikeshare-research.org/api/v1/systems/chicago</span></span>
+<span id="cb12-906"><a href="#cb12-906" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-907"><a href="#cb12-907" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-908"><a href="#cb12-908" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Bike Share Map</span><span class="co">](https://bikesharemap.com/#/8/-87.5771/41.3747/)</span></span>
+<span id="cb12-909"><a href="#cb12-909" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-910"><a href="#cb12-910" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">CityBikes: bike sharing networks around the world</span><span class="co">](https://citybik.es/)</span></span>
+<span id="cb12-911"><a href="#cb12-911" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-912"><a href="#cb12-912" aria-hidden="true" tabindex="-1"></a><span class="fu">## Interactive Map</span></span>
+<span id="cb12-913"><a href="#cb12-913" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-914"><a href="#cb12-914" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
+<span id="cb12-915"><a href="#cb12-915" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;iframe width = "1000" height = "800" src = "https://bikesharemap.com/#/8/-87.5771/41.3747/" title = "bike-share map"&gt;&lt;/iframe&gt;</span></span>
+<span id="cb12-916"><a href="#cb12-916" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-917"><a href="#cb12-917" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-918"><a href="#cb12-918" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = FALSE}</span></span>
+<span id="cb12-919"><a href="#cb12-919" aria-hidden="true" tabindex="-1"></a><span class="in">#|label: 'drops duckDB tables'</span></span>
+<span id="cb12-920"><a href="#cb12-920" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-921"><a href="#cb12-921" aria-hidden="true" tabindex="-1"></a><span class="in"># a chunk for easily dropping either all (default) or specific tables from the ddb. Also made it so you can see the current tables and then the tables after running the chunk.</span></span>
+<span id="cb12-922"><a href="#cb12-922" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-923"><a href="#cb12-923" aria-hidden="true" tabindex="-1"></a><span class="in">paths &lt;- duckdb::dbListTables(dbconn)</span></span>
+<span id="cb12-924"><a href="#cb12-924" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-925"><a href="#cb12-925" aria-hidden="true" tabindex="-1"></a><span class="in">paths[]</span></span>
+<span id="cb12-926"><a href="#cb12-926" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-927"><a href="#cb12-927" aria-hidden="true" tabindex="-1"></a><span class="in">drops_tables &lt;- function(path) {</span></span>
+<span id="cb12-928"><a href="#cb12-928" aria-hidden="true" tabindex="-1"></a><span class="in">    </span></span>
+<span id="cb12-929"><a href="#cb12-929" aria-hidden="true" tabindex="-1"></a><span class="in">    duckdb::dbRemoveTable(dbconn, </span></span>
+<span id="cb12-930"><a href="#cb12-930" aria-hidden="true" tabindex="-1"></a><span class="in">                          path)</span></span>
+<span id="cb12-931"><a href="#cb12-931" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb12-932"><a href="#cb12-932" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-933"><a href="#cb12-933" aria-hidden="true" tabindex="-1"></a><span class="in">paths[] |&gt; purrr::walk(drops_tables)</span></span>
+<span id="cb12-934"><a href="#cb12-934" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-935"><a href="#cb12-935" aria-hidden="true" tabindex="-1"></a><span class="in">paths &lt;- duckdb::dbListTables(dbconn)</span></span>
+<span id="cb12-936"><a href="#cb12-936" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-937"><a href="#cb12-937" aria-hidden="true" tabindex="-1"></a><span class="in">paths[]</span></span>
+<span id="cb12-938"><a href="#cb12-938" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-939"><a href="#cb12-939" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-942"><a href="#cb12-942" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-943"><a href="#cb12-943" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: 'duckDB Shutdown'</span></span>
+<span id="cb12-944"><a href="#cb12-944" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-945"><a href="#cb12-945" aria-hidden="true" tabindex="-1"></a>duckdb<span class="sc">::</span><span class="fu">dbDisconnect</span>(dbconn, <span class="at">shutdown=</span><span class="cn">TRUE</span>)</span>
+<span id="cb12-946"><a href="#cb12-946" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 
 
