@@ -3,6 +3,13 @@ title: "BikeShare"
 author: "Eric Mossotti"
 bibliography: citations/bikeShare/references.bib
 
+code-links:
+    - text: Project Code
+    href: bikeShare.qmd
+
+page-layout: full
+
+
 format: html
 toc: true
 toc_float: true
@@ -15,11 +22,44 @@ df_print: paged
 copyright: "Eric Mossotti, 2024"
 ---
 
+# Case Study: 
+
+# Bike-Sharing, Rethought
+
+consumption intention\
+commodity consumption\
+customer's involvement, participation, perceived value, consumer's purchase intention
+
+Improving demand for Annual Memberships.
+
+compare to buying a bike?
+
+[@divvyme]
+
+|                    |       Single Ride       |           Day Pass            |            Divvy             |          Lyft Pink           |
+|---------------|:-------------:|:-------------:|:-------------:|:-------------:|
+|                    |    \$1 + \$0.18/min     |          \$18.10/day          |        \$143.90/year         |          \$199/year          |
+| Classic bike       | \$1 unlock + \$0.18/min | 3 hours free, then \$0.18/min | 45 min free, then \$0.18/min | 45 min free, then \$0.18/min |
+| Scooter            | \$1 unlock + \$0.44/min |   Free unlocks + \$0.44/min   |  Free unlocks + \$0.29/min   |  Free unlocks + \$0.29/min   |
+| Ebike              | \$1 unlock + \$0.44/min |   Free unlocks + \$0.44/min   |  Free unlocks + \$0.18/min   |  Free unlocks + \$0.18/min   |
+| Bike Angels        |                         |                               |              y               |              y               |
+| Rideshare Benefits |                         |                               |                              |              y               |
+
+: Compare options
+
 #### References:
 
-#### [@datalic]
+-   [Bike-share research (bikeshare-research.org)](https://bikeshare-research.org/#bssid:chicago)
 
--   
+-   [Divvy - Wikipedia](https://en.wikipedia.org/wiki/Divvy)
+
+-   [Cycling in Chicago - Wikipedia](https://en.wikipedia.org/wiki/Cycling_in_Chicago)
+
+-   [Home \| Divvy Bikes](https://divvybikes.com/)
+
+-   [Divvy Membership & Pass Options \| Divvy Bikes](https://divvybikes.com/pricing)
+
+-   [@datalic]
 
     -   [Data License Agreement \| Divvy Bikes](https://divvybikes.com/data-license-agreement)
 
@@ -780,6 +820,19 @@ groupedStats_tsib |>
                    strip.background.x = ggplot2::element_rect(
                        fill = 'yellowgreen')) +
     ggplot2::scale_color_distiller(palette = 'Spectral')
+```
+
+```         
+bikeshare-research.org/api/v1/systems/boston
+```
+
+[Bike Share Map](https://bikesharemap.com/#/8/-87.5771/41.3747/)
+
+[CityBikes: bike sharing networks around the world](https://citybik.es/)
+
+```{r}
+
+arrow::read_csv_arrow()
 ```
 
 ```{r, eval = FALSE}
