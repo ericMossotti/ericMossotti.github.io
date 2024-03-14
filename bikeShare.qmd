@@ -5,7 +5,7 @@ bibliography: citations/bikeShare/references.bib
 
 code-links:
     - text: Project Code
-    href: bikeShare.qmd
+      href: bikeShare.qmd
 
 page-layout: full
 
@@ -830,11 +830,6 @@ bikeshare-research.org/api/v1/systems/boston
 
 [CityBikes: bike sharing networks around the world](https://citybik.es/)
 
-```{r}
-
-arrow::read_csv_arrow()
-```
-
 ```{r, eval = FALSE}
 #|label: 'drops duckDB tables'
 
@@ -856,8 +851,6 @@ paths <- duckdb::dbListTables(dbconn)
 
 paths[]
 ```
-
-## 
 
 ```{r}
 #|label: 'duckDB Shutdown'
