@@ -5,9 +5,11 @@ bibliography: citations/bikeShare/references.bib
 
 repo: https://github.com/ericMossotti/ericMossotti.github.io/blob/main/bikeShare.qmd
 
+
 code-links:
     - text: Project Code
       href: bikeShare.qmd
+source: repo
 
 format: html
 page-layout: full
@@ -16,7 +18,6 @@ code-fold: true
 code-copy: hover
 code-overflow: wrap
 code-tools: true
-source: repo
 
 toc: true
 toc_float: false
@@ -488,6 +489,9 @@ dplyr::tbl(dbconn,
            "fltrd_tripData") |>
     arrow::to_arrow() |>
     arrow::write_parquet(sink = "fltrdData/fltrd.parquet")
+
+# Now we have a filtered data file. 
+unlink('tripdata', recursive = TRUE)
 ```
 
 ```{r}
@@ -616,8 +620,9 @@ grouped_byDay <- dplyr::tbl(dbconn,
 ```
 
 ```{r}
-#|label: 'grouped tsibb'
+#|label: 'to grouped tsibb'
 
+# tsibble, time-series table/tibble seems to make time series plots more straightforward
 grouped_tsi <- grouped_byDay |>
     tsibble::as_tsibble(key = c(member_casual,
                                 n),
@@ -641,6 +646,53 @@ grouped_tsi |> ggplot2::ggplot(
                   x = "Month",
                   y = "Count")
 ```
+
+
+```{r}
+grouped_tsi
+```
+
+```{r}
+ojs_define(js_tsi = grouped_tsi)
+```
+
+```{ojs}
+jsData = transpose(js_tsi)
+```
+
+```{ojs}
+Plot.plot({
+    grid: true,
+    color: {legend: true},
+    marks: [
+        Plot.dot(jsData, {x: 'started_at', y: 'n', fill: 'member_casual' })
+]
+})
+```
+
+
+```{ojs}
+Plot.plot({
+    grid: true,
+    color: {legend: true},
+    marks: [
+        Plot.dot(jsData, {x: 'started_at', y: 'n', fill: 'member_casual' })
+]
+})
+```
+
+
+```{ojs}
+Plot.lineY(jsData, {x: "started_at", y: "n"}).plot()
+```
+
+```{ojs}
+Inputs.table(jsData, {
+rows: 20
+})
+```
+
+
 
 ```{r}
 #|label: 'line plot'
@@ -833,7 +885,6 @@ bikeshare-research.org/api/v1/systems/chicago
 ```{=html}
 <iframe width = "1000" height = "800" src = "https://bikesharemap.com/#/8/-87.5771/41.3747/" title = "bike-share map"></iframe>
 ```
-
 ```{r, eval = FALSE}
 #|label: 'drops duckDB tables'
 
@@ -860,4 +911,18 @@ paths[]
 #|label: 'duckDB Shutdown'
 
 duckdb::dbDisconnect(dbconn, shutdown=TRUE)
+```
+
+```{r}
+
+pd <- reticulate::import("pandas", convert = FALSE)
+
+my_series <- pd$Series(c(2,4,6,8), index = c('blue',
+                                             'red',
+                                             'green',
+                                             'yellow'))
+
+series_mean  <- my_series$mean()
+
+print(series_mean)
 ```
