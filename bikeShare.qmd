@@ -647,9 +647,92 @@ grouped_tsi |> ggplot2::ggplot(
                   y = "Count")
 ```
 
+```{r}
+df <- dplyr::tbl(dbconn,
+           "fltrd_data") |>
+    dplyr::select(start_lng,
+                  start_lat) |>
+    dplyr::add_count(start_lng, 
+                     start_lat) |>
+    dplyr::distinct() |> 
+    dplyr::arrange(desc(n)) |>
+    dplyr::collect()
+
+df_sf <- sf::st_as_sf(df, 
+                      coords = c(1:2),
+                      crs = 4326)
+
+
+chicago <- maps::us.cities |>
+    dplyr::select("name",
+                  "long",
+                  "lat") |>
+    dplyr::filter(name == "Chicago IL")
+
+chicago
+
+
+leafmap <- leaflet::leaflet() |>
+    leaflet::addTiles() |>
+    leaflet::setView(lng = chicago$long,
+                     lat = chicago$lat,
+                     zoom = 10) |>
+    leaflet::addMarkers(lng = df$start_lng[1:50],
+                        lat = df$start_lat[1:50],
+                        #color = pal,
+                        clusterOptions = markerClusterOptions() )
+
+leafmap
+
+
+mapview::mapview(spData::us_states)
+
+pal <- leaflet::colorNumeric(palette = "viridis",
+                             (df$n[1:50]/10000))
+###########
+
+#examples
+qtm("London")       
+tmap_mode("view")
+tm_shape(stations1)+
+  tm_bubbles(col = "red", size= "Volume", scale = .5) +
+  tm_basemap(server = c('OpenStreetMap')) 
+
+spatialDF <- sf::as_Spatial(df_sf)
+
+###example
+library(raster)
+library(sp)
+library(dplyr)
+library(leaflet)
+
+usa <- getData("GADM", country = "usa", level = 1)
+cal <- subset(usa, NAME_1 == "California")
+
+foo <- as(cal, "SpatialPolygons")
+
+#########
+
+ill <- subset(spData::us_states, NAME == "Illinois" )
+
+
+illgadm <- subset(usa, usa$NAME_1 == "Illinois")
+
+usa <- geodata::gadm(country = 'usa',
+                     path = "geo",
+                     level = 1)
+
+usa$
+
+mapview::mapview(ill)
+
+ill
+
+chicago$NAME_1
+```
 
 ```{r}
-grouped_tsi
+leaflet::leaflet()
 ```
 
 ```{r}
@@ -665,11 +748,10 @@ Plot.plot({
     grid: true,
     color: {legend: true},
     marks: [
-        Plot.dot(jsData, {x: 'started_at', y: 'n', fill: 'member_casual' })
+        Plot.dot(jsData, {x: 'started_at', y: 'n', fill: 'member_casual'})
 ]
 })
 ```
-
 
 ```{ojs}
 Plot.plot({
@@ -681,7 +763,6 @@ Plot.plot({
 })
 ```
 
-
 ```{ojs}
 Plot.lineY(jsData, {x: "started_at", y: "n"}).plot()
 ```
@@ -692,7 +773,50 @@ rows: 20
 })
 ```
 
+```{ojs}
+//| code-fold: true
 
+my_survey_filtered_too = my_survey
+  .filter(aq.escape(d => d.my_question == questions))
+  .groupby('my_question', 'response', 'rnumber')
+  .count()
+  .orderby('my_question', 'rnumber')
+  
+Plot.plot({
+  marginRight: 140,
+  y: {
+    axis: null,
+    domain: d3.sort(my_survey_filtered_too, d => -d.rnumber).map(d => d.response).reverse()
+  },
+  x: {
+    grid: true
+  },
+ marks: [
+    Plot.barX(my_survey_filtered_too, {y: "response", x: "count"}),
+    Plot.text(my_survey_filtered_too, {
+      x: "count",
+      y: "response",
+      text: "response",
+      textAnchor: "start",
+      dx: 6
+    })
+  ]
+})
+```
+
+```{r}
+
+newdf <- groupedStats_byDay |>
+    dplyr::ungroup() |>
+    dplyr::select(started_at, 
+                  n)
+newdf
+
+dygraphs::dygraph(newdf, main = "ever",
+                  ylab = "what")
+
+predicted <- predict(df, n.ahead = 72, prediction.interval = TRUE )
+```
 
 ```{r}
 #|label: 'line plot'
@@ -797,7 +921,6 @@ groupedStats_tsib <- groupedStats_byDay |>
 
 ```{r}
 #|label: 'Ribbon-Line Plot'
-
 groupedStats_tsib |> 
     ggplot2::ggplot(ggplot2::aes(started_at,
                                  group =  rideable_type)) +
@@ -820,7 +943,6 @@ groupedStats_tsib |>
 
 ```{r}
 #|label: 'Facet-Wrap Plot' 
-
 groupedStats_byDay <- dplyr::tbl(dbconn,
                             "fltrd_data") |>
     dplyr::select(started_at,
@@ -846,7 +968,6 @@ groupedStats_tsib <- groupedStats_byDay |>
     tsibble::as_tsibble(key = c(member_casual:mph_stDev),
                         index = started_at) |>
     dplyr::arrange(started_at)
-
 
 groupedStats_tsib |>
     ggplot2::ggplot(ggplot2::aes(x = started_at,
@@ -874,6 +995,18 @@ groupedStats_tsib |>
 
 ```         
 bikeshare-research.org/api/v1/systems/chicago
+```
+
+```{r}
+
+req <- curl::curl_fetch_memory(
+    "https://bikeshare-research.org/api/v1/systems/chicago")
+
+response_body <- rawToChar(req$content)
+
+json_data <- jsonlite::fromJSON(response_body)
+
+json_data
 ```
 
 [Bike Share Map](https://bikesharemap.com/#/8/-87.5771/41.3747/)
