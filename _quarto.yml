@@ -11,7 +11,9 @@ website:
       - about.qmd
       - href: bikeShare.qmd
         text: Bike Share
-      
+    page-footer:
+        center:
+            - text: "Data Analysis Portfolio"
 
 format:
   html:
