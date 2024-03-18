@@ -9,17 +9,19 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
-      - href: bikeShare.qmd
-        text: Bike Share
     page-footer:
         center:
             - text: "Data Analysis Portfolio"
 
 format:
   html:
-    theme: cosmo
-    css: styles.css
+    theme: 
+        - cosmo
+        - styles.sass
+   # theme: cosmo
+   # css: styles.css
     toc: true
+    page-layout: full
 
 editor: visual
 
