@@ -699,6 +699,8 @@ library(lwgeom)
 library(stars)
 library(sf)
 library(sfnetworks)
+library(igraph)
+library(sp)
 
 # Hopefully fixes Quarto Publishing error
 ```
