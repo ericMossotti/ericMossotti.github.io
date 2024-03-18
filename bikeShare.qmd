@@ -690,6 +690,8 @@ coordQry_small <- dplyr::tbl(dbconn,
 #|label: 'terra package load'
 
 # Hopefully fixes Quarto Publishing error
+#library(raster)
+library(Rcpp)
 library(terra)
 ```
 
@@ -991,5 +993,5 @@ paths[]
 ```{r}
 #|label: 'duckDB Shutdown'
 
-duckdb::dbDisconnect(dbconn, shutdown=TRUE)
+duckdb::dbDisconnect(dbconn, shutdown = TRUE)
 ```
