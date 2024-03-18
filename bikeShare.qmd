@@ -711,7 +711,8 @@ coordQry_small |>
 ```{r}
 #|label: "tmap"
 
-#illi <- subset(spData::us_states, NAME == "Illinois" )
+illi <- subset(spData::us_states, NAME == "Illinois")
+tmap::tmap_mode("view")
 coordQry_small |>
     sf::st_as_sf(coords = c(1:2),
                  crs = 4326) |>
@@ -758,18 +759,6 @@ rows: 20
 })
 ```
 
-```{r}
-
-newdf <- groupedStats_byDay |>
-    dplyr::ungroup() |>
-    dplyr::select(started_at, 
-                  n)
-
-dygraphs::dygraph(newdf, main = "ever",
-                  ylab = "what")
-
-predicted <- predict(df, n.ahead = 72, prediction.interval = TRUE )
-```
 
 ```{r}
 #|label: 'line plot'
@@ -863,6 +852,8 @@ groupedStats_byDay <- dplyr::tbl(dbconn,
                      mph_stDev = stats::sd(mph))
 ```
 
+
+
 ```{r}
 #|label: 'grouped stats tsibb'
 
@@ -945,6 +936,22 @@ groupedStats_tsib |>
                        fill = 'yellowgreen')) +
     ggplot2::scale_color_distiller(palette = 'Spectral')
 ```
+
+
+```{r}
+#|label: "dygraph"
+
+newdf <- groupedStats_byDay |>
+    dplyr::ungroup() |>
+    dplyr::select(started_at, 
+                  n)
+
+dygraphs::dygraph(newdf, main = "ever",
+                  ylab = "what")
+
+#predicted <- predict(df, n.ahead = 72, prediction.interval = TRUE )
+```
+
 
 These maps track bike-sharing activity going on worldwide and in Chicago.
 
