@@ -1,18 +1,18 @@
 ---
 title: "BikeShare"
 author: "Eric Mossotti"
+
 bibliography: citations/bikeShare/references.bib
 
 repo: https://github.com/ericMossotti/ericMossotti.github.io/blob/main/bikeShare.qmd
 
+source: repo
 
 code-links:
     - text: Project Code
       href: bikeShare.qmd
-source: repo
+      
 
-format: html
-page-layout: full
 
 code-fold: true
 code-copy: hover
@@ -28,7 +28,7 @@ warning: false
 
 df_print: paged
 
-copyright: "Eric Mossotti, 2024"
+#font: merriweather, futura
 ---
 
 # Case Study: Bike-Sharing, Rethought
@@ -396,7 +396,6 @@ correctDistinct <- tripset |>
 #|label: 'duplicate correction tibb'
 #|fig-cap: Observation Table
 
-
 tibble::tibble(
     "Original Obs" = original_nobs,
     "Uncorrected Complete Obs" = incorrectDistinct,
@@ -586,6 +585,12 @@ dplyr::collect(memberCasuals_monthly) |>
     tag = "Figure 1.b")
 ```
 
+```{r}
+#|label: "duckDB shutdown"
+
+duckdb::dbDisconnect(dbconn, shutdown = TRUE)
+```
+
 ## Visualizations
 
 for quick reference with using Tsibble syntax
@@ -648,91 +653,71 @@ grouped_tsi |> ggplot2::ggplot(
 ```
 
 ```{r}
-df <- dplyr::tbl(dbconn,
-           "fltrd_data") |>
-    dplyr::select(start_lng,
-                  start_lat) |>
-    dplyr::add_count(start_lng, 
-                     start_lat) |>
-    dplyr::distinct() |> 
-    dplyr::arrange(desc(n)) |>
-    dplyr::collect()
+#|label: "map query setup"
 
-df_sf <- sf::st_as_sf(df, 
-                      coords = c(1:2),
-                      crs = 4326)
-
-
+# chicago starting coordinates for leaflet, setView
 chicago <- maps::us.cities |>
     dplyr::select("name",
                   "long",
                   "lat") |>
     dplyr::filter(name == "Chicago IL")
 
-chicago
+# full dataset coordinates, might need to sample
+coordQry <- dplyr::tbl(dbconn,
+                       "fltrd_data") |>
+    dplyr::select(start_lng,
+                  start_lat) |>
+    dplyr::add_count(start_lng,
+                     start_lat) |>
+    dplyr::distinct() |>
+    dplyr::arrange(desc(n)) |>
+    dplyr::collect()
 
 
-leafmap <- leaflet::leaflet() |>
+coordQry_small <- dplyr::tbl(dbconn,
+                       "fltrd_data") |>
+    dplyr::select(start_lng,
+                  start_lat) |>
+    dplyr::add_count(start_lng,
+                     start_lat) |>
+    dplyr::distinct() |>
+    dplyr::arrange(desc(n)) |>
+    dplyr::collect() |>
+    dplyr::slice_head(n = 50)
+```
+
+```{r}
+#|label: "leaflet"
+
+leaflet::leaflet() |>
     leaflet::addTiles() |>
     leaflet::setView(lng = chicago$long,
                      lat = chicago$lat,
                      zoom = 10) |>
-    leaflet::addMarkers(lng = df$start_lng[1:50],
-                        lat = df$start_lat[1:50],
-                        #color = pal,
-                        clusterOptions = markerClusterOptions() )
-
-leafmap
-
-
-mapview::mapview(spData::us_states)
-
-pal <- leaflet::colorNumeric(palette = "viridis",
-                             (df$n[1:50]/10000))
-###########
-
-#examples
-qtm("London")       
-tmap_mode("view")
-tm_shape(stations1)+
-  tm_bubbles(col = "red", size= "Volume", scale = .5) +
-  tm_basemap(server = c('OpenStreetMap')) 
-
-spatialDF <- sf::as_Spatial(df_sf)
-
-###example
-library(raster)
-library(sp)
-library(dplyr)
-library(leaflet)
-
-usa <- getData("GADM", country = "usa", level = 1)
-cal <- subset(usa, NAME_1 == "California")
-
-foo <- as(cal, "SpatialPolygons")
-
-#########
-
-ill <- subset(spData::us_states, NAME == "Illinois" )
-
-
-illgadm <- subset(usa, usa$NAME_1 == "Illinois")
-
-usa <- geodata::gadm(country = 'usa',
-                     path = "geo",
-                     level = 1)
-
-usa$
-
-mapview::mapview(ill)
-
-ill
-
-chicago$NAME_1
+    leaflet::addMarkers(lng = coordQry$start_lng[1:50],
+                        lat = coordQry$start_lat[1:50],
+                        clusterOptions = leaflet::markerClusterOptions())
 ```
 
 ```{r}
-leaflet::leaflet()
+#|label: "mapview"
+
+coordQry_small |>
+    sf::st_as_sf(coords = c(1:2),
+                crs = 4326) |>
+    mapview::mapview()
+```
+
+```{r}
+#|label: "tmap"
+
+#illi <- subset(spData::us_states, NAME == "Illinois" )
+coordQry_small |>
+    sf::st_as_sf(coords = c(1:2),
+                 crs = 4326) |>
+    tmap::tm_shape() +
+    tmap::tm_markers(clustering = TRUE) +
+    tmap::tm_basemap(server = c('OpenStreetMap'))
 ```
 
 ```{r}
@@ -773,44 +758,12 @@ rows: 20
 })
 ```
 
-```{ojs}
-//| code-fold: true
-
-my_survey_filtered_too = my_survey
-  .filter(aq.escape(d => d.my_question == questions))
-  .groupby('my_question', 'response', 'rnumber')
-  .count()
-  .orderby('my_question', 'rnumber')
-  
-Plot.plot({
-  marginRight: 140,
-  y: {
-    axis: null,
-    domain: d3.sort(my_survey_filtered_too, d => -d.rnumber).map(d => d.response).reverse()
-  },
-  x: {
-    grid: true
-  },
- marks: [
-    Plot.barX(my_survey_filtered_too, {y: "response", x: "count"}),
-    Plot.text(my_survey_filtered_too, {
-      x: "count",
-      y: "response",
-      text: "response",
-      textAnchor: "start",
-      dx: 6
-    })
-  ]
-})
-```
-
 ```{r}
 
 newdf <- groupedStats_byDay |>
     dplyr::ungroup() |>
     dplyr::select(started_at, 
                   n)
-newdf
 
 dygraphs::dygraph(newdf, main = "ever",
                   ylab = "what")
@@ -993,31 +946,12 @@ groupedStats_tsib |>
     ggplot2::scale_color_distiller(palette = 'Spectral')
 ```
 
-```         
-bikeshare-research.org/api/v1/systems/chicago
-```
+These maps track bike-sharing activity going on worldwide and in Chicago.
 
-```{r}
+[Bike Share Map](https://bikesharemap.com/#/8/-87.5771/41.3747/) [@bikesha]
 
-req <- curl::curl_fetch_memory(
-    "https://bikeshare-research.org/api/v1/systems/chicago")
+[CityBikes: bike sharing networks around the world](https://citybik.es/) [@citybike]
 
-response_body <- rawToChar(req$content)
-
-json_data <- jsonlite::fromJSON(response_body)
-
-json_data
-```
-
-[Bike Share Map](https://bikesharemap.com/#/8/-87.5771/41.3747/)
-
-[CityBikes: bike sharing networks around the world](https://citybik.es/)
-
-## Interactive Map
-
-```{=html}
-<iframe width = "1000" height = "800" src = "https://bikesharemap.com/#/8/-87.5771/41.3747/" title = "bike-share map"></iframe>
-```
 ```{r, eval = FALSE}
 #|label: 'drops duckDB tables'
 
@@ -1044,18 +978,4 @@ paths[]
 #|label: 'duckDB Shutdown'
 
 duckdb::dbDisconnect(dbconn, shutdown=TRUE)
-```
-
-```{r}
-
-pd <- reticulate::import("pandas", convert = FALSE)
-
-my_series <- pd$Series(c(2,4,6,8), index = c('blue',
-                                             'red',
-                                             'green',
-                                             'yellow'))
-
-series_mean  <- my_series$mean()
-
-print(series_mean)
 ```
