@@ -687,6 +687,13 @@ coordQry_small <- dplyr::tbl(dbconn,
 ```
 
 ```{r}
+#|label: 'terra package load'
+
+# Hopefully fixes Quarto Publishing error
+library(terra)
+```
+
+```{r}
 #|label: "leaflet"
 
 leaflet::leaflet() |>
