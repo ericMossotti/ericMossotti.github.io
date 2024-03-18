@@ -1,9 +1,11 @@
 ---
 title: "About"
+about:
+    template: jolla
+    links: 
+      - icon: github
+        text: Github
+        href: https://github.com/ericMossotti
 ---
 
-About this site
-
-```{r}
-1 + 1
-```
+Something about this site.
