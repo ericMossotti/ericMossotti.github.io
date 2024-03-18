@@ -690,10 +690,6 @@ coordQry_small <- dplyr::tbl(dbconn,
 #|label: 'terra error fixes'
 
 # Hopefully fixes Quarto Publishing error
-library(Rcpp)
-library(leaflet)
-library(mapview)
-library(tmap)
 ```
 
 ```{r}
