@@ -1422,15 +1422,15 @@
     },
     "terra": {
       "Package": "terra",
-      "Version": "1.7-74",
+      "Version": "1.7-71",
       "Source": "Repository",
-      "Repository": "https://rspatial.r-universe.dev",
+      "Repository": "RSPM",
       "Requirements": [
         "R",
         "Rcpp",
         "methods"
       ],
-      "Hash": "342ba0caee3f3312404d74cb781f5a21"
+      "Hash": "e8611881ab70a4fb7a1f629b31e6fcff"
     },
     "tibble": {
       "Package": "tibble",
