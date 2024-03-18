@@ -695,6 +695,10 @@ coordQry_small <- dplyr::tbl(dbconn,
 #library(spData)
 #library(Rcpp)
 #library(proj4)
+library(lwgeom)
+library(stars)
+library(sf)
+library(sfnetworks)
 
 # Hopefully fixes Quarto Publishing error
 ```
