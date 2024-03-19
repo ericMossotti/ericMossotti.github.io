@@ -695,12 +695,12 @@ coordQry_small <- dplyr::tbl(dbconn,
 #library(spData)
 #library(Rcpp)
 #library(proj4)
-library(lwgeom)
-library(stars)
-library(sf)
+#library(lwgeom)
+#library(stars)0
+#library(sf)
 #library(sfnetworks)
 #library(igraph)
-library(sp)
+#library(sp)
 
 # Hopefully fixes Quarto Publishing error
 ```
@@ -721,10 +721,10 @@ leaflet::leaflet() |>
 ```{r}
 #|label: "mapview"
 
-#oordQry_small |>
- #   sf::st_as_sf(coords = c(1:2),
- #               crs = 4326) |>
- #   mapview::mapview()
+coordQry_small |>
+    sf::st_as_sf(coords = c(1:2),
+                crs = 4326) |>
+    mapview::mapview()
 ```
 
 ```{r}
