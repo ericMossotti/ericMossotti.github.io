@@ -27,8 +27,6 @@ jobs:
         uses: r-lib/actions/setup-renv@v2
         with:
           cache-version: 1
-          packages:
-            any::units
 
 
       - name: Render and Publish
