@@ -2,8 +2,8 @@ project:
   type: website
   #output-dir: _site
 
-execute: 
-  freeze: true
+#execute: 
+#  freeze: true
 
 
 
