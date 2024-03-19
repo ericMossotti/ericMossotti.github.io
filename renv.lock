@@ -931,19 +931,6 @@
       ],
       "Hash": "680ad542fbcf801442c83a6ac5a2126c"
     },
-    "lwgeom": {
-      "Package": "lwgeom",
-      "Version": "0.2-14",
-      "Source": "Repository",
-      "Repository": "RSPM",
-      "Requirements": [
-        "R",
-        "Rcpp",
-        "sf",
-        "units"
-      ],
-      "Hash": "f1fb7cc9fc60f3b039201174268aaad9"
-    },
     "magrittr": {
       "Package": "magrittr",
       "Version": "2.0.3",
@@ -1301,29 +1288,6 @@
       ],
       "Hash": "d8a65e80fdc852bd6a0635664260a6e3"
     },
-    "sf": {
-      "Package": "sf",
-      "Version": "1.0-15",
-      "Source": "Repository",
-      "Repository": "RSPM",
-      "Requirements": [
-        "DBI",
-        "R",
-        "Rcpp",
-        "classInt",
-        "grDevices",
-        "graphics",
-        "grid",
-        "magrittr",
-        "methods",
-        "s2",
-        "stats",
-        "tools",
-        "units",
-        "utils"
-      ],
-      "Hash": "f432b3379fb1a47046e253468b6b6b6d"
-    },
     "sfheaders": {
       "Package": "sfheaders",
       "Version": "0.4.4",
@@ -1363,23 +1327,6 @@
         "sp"
       ],
       "Hash": "49704afce6839b2ac1c82c098feb7cc7"
-    },
-    "stars": {
-      "Package": "stars",
-      "Version": "0.6-4",
-      "Source": "Repository",
-      "Repository": "RSPM",
-      "Requirements": [
-        "R",
-        "abind",
-        "classInt",
-        "methods",
-        "parallel",
-        "rlang",
-        "sf",
-        "units"
-      ],
-      "Hash": "8b4284bf9fddfb481d516877a2045023"
     },
     "stringi": {
       "Package": "stringi",
@@ -1596,17 +1543,6 @@
         "vctrs"
       ],
       "Hash": "d5da786ac5a28f62ca2eb8255ad7b9f3"
-    },
-    "units": {
-      "Package": "units",
-      "Version": "0.8-5",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "R",
-        "Rcpp"
-      ],
-      "Hash": "119d19da480e873f72241ff6962ffd83"
     },
     "utf8": {
       "Package": "utf8",
