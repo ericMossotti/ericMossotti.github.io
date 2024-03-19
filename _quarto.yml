@@ -1,7 +1,7 @@
 project:
   type: website
-  
-
+  output-dir: docs
+  execute: freeze: true
 
 website:
   title: "ericMossotti.github.io"
