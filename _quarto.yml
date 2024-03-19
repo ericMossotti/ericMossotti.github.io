@@ -1,9 +1,11 @@
 project:
   type: website
-  output-dir: _site
+  #output-dir: _site
 
 execute: 
   freeze: true
+
+
 
 website:
   title: "ericMossotti.github.io"
