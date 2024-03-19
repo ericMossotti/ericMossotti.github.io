@@ -3,7 +3,7 @@ project:
   output-dir: _site
 
 execute: 
-  freeze: auto
+  freeze: true
 
 website:
   title: "ericMossotti.github.io"
