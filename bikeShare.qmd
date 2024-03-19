@@ -698,8 +698,8 @@ coordQry_small <- dplyr::tbl(dbconn,
 library(lwgeom)
 library(stars)
 library(sf)
-library(sfnetworks)
-library(igraph)
+#library(sfnetworks)
+#library(igraph)
 library(sp)
 
 # Hopefully fixes Quarto Publishing error
