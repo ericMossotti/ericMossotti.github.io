@@ -700,6 +700,7 @@ leaflet::leaflet() |>
 ```{r}
 #|label: "mapview"
 
+install.packages("raster")
 library(raster)
 
 coordQry_small |>
