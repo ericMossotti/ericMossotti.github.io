@@ -1,14 +1,17 @@
 project:
   type: website
+    #site-url: https://ericMossotti.github.io/Bike_Share
 #  output-dir: docs
 #  execute: freeze: true
 
 website:
-  title: "ericMossotti.github.io"
+  title: ""
   navbar:
     left:
       - href: index.qmd
         text: Home
+      - href: projectsBlog.qmd
+        text: "Project Blog"
       - about.qmd
     page-footer:
         center:
@@ -16,9 +19,10 @@ website:
 
 format:
   html:
-    theme: 
-        - cosmo
-        - styles.sass
+    theme:
+        light: morph
+        dark: solar
+    #    - styles.sass
    # theme: cosmo
    # css: styles.css
     toc: true

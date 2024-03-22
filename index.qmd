@@ -1,13 +1,6 @@
 ---
-title: "ericMossotti.github.io"
-listing:
-    - id: portfolio
-      contents: portProjects.yml
-      type: grid
-      categories: true
+title: ""
+toc: false
 ---
 
-
-
-:::{#portfolio}
-:::
+building site

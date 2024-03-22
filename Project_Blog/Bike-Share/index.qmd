@@ -1,0 +1,13 @@
+---
+title: "Data Analysis: Bike-Sharing Program in Chicago"
+date: 3-22-2022
+categories: [time-series, geospatial]
+description: | 
+    "Case study on the bike-sharing program in Chicago, Divvy-Bikes."
+draft: false
+code-link: true
+---
+
+Data analysis project I've been working on:
+
+[🚴](https:://ericMossotti.github.io/Bike_Share/)

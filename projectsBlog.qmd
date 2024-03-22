@@ -1,0 +1,18 @@
+---
+title: "Projects Blog"
+subtitle: "Like a portfolio."
+
+listing:
+    - id: portfolio
+      contents: Project_Blog
+      type: default
+      categories: true
+     # feed: true
+      sort: "date"
+
+page-layout: full
+title-block-banner: true
+---
+
+::: {#portfolio}
+:::
