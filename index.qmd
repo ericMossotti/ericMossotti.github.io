@@ -1,6 +1,14 @@
 ---
 title: "ericMossotti.github.io"
 listing:
-    contents:
-        - https://ericmossotti.github.io/Bike_Share/
+    - id: portfolio
+      contents: portProjects.yml
+      type: grid
+      categories: true
+      reading-time: true
 ---
+
+
+
+:::{#portfolio}
+:::
