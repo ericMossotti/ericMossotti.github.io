@@ -10,4 +10,4 @@ code-link: true
 
 Data analysis project I've been working on:
 
-[🚴](https:://ericMossotti.github.io/Bike_Share/)
+[🚴](https://ericMossotti.github.io/Bike_Share/)
