@@ -1,10 +1,17 @@
 [
   {
+    "objectID": "Project_Blog/Bike-Share/index.html",
+    "href": "Project_Blog/Bike-Share/index.html",
+    "title": "Data Analysis: Bike-Sharing Program in Chicago",
+    "section": "",
+    "text": "Data analysis project I’ve been working on:\n🚴"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "ericMossotti.github.io",
+    "title": "",
     "section": "",
-    "text": "Case Study: Bike-Share\n\n\n\ntime-series\n\n\ngeospatial\n\n\n\n\n\nname\n\n\nBikeShare\n\n\n\n\nhref\n\n\nhttps://ericmossotti.github.io/Bike_Share/\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "building site"
   },
   {
     "objectID": "about.html",
@@ -12,5 +19,12 @@
     "title": "About",
     "section": "",
     "text": "Something about this site."
+  },
+  {
+    "objectID": "projectsBlog.html",
+    "href": "projectsBlog.html",
+    "title": "Projects Blog",
+    "section": "",
+    "text": "Data Analysis: Bike-Sharing Program in Chicago\n\n\n\n\n\n\ntime-series\n\n\ngeospatial\n\n\n\n“Case study on the bike-sharing program in Chicago, Divvy-Bikes.” \n\n\n\n\n\nMar 22, 2022\n\n\n\n\n\n\nNo matching items"
   }
 ]
