@@ -5,7 +5,6 @@ listing:
       contents: portProjects.yml
       type: grid
       categories: true
-      reading-time: true
 ---
 
 
