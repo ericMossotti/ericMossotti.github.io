@@ -2,5 +2,5 @@
 title: "ericMossotti.github.io"
 listing:
     contents:
-        - "bikeShare.qmd"
+        - https://ericmossotti.github.io/Bike_Share/
 ---
