@@ -1,17 +1,17 @@
 [
   {
-    "objectID": "Project_Blog/Bike-Share/index.html",
-    "href": "Project_Blog/Bike-Share/index.html",
-    "title": "Data Analysis: Bike-Sharing Program in Chicago",
+    "objectID": "projectsBlog.html",
+    "href": "projectsBlog.html",
+    "title": "Projects Blog",
     "section": "",
-    "text": "Data analysis project I’ve been working on:\n🚴"
+    "text": "No matching items"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "",
     "section": "",
-    "text": "building site"
+    "text": "Hello.\nPlease check out the Projects Blog in the navigation menu of this site. I just haven’t gotten around to creating a proper Home page yet, among other things. Within a few weeks I should have something more professional up."
   },
   {
     "objectID": "about.html",
@@ -19,12 +19,5 @@
     "title": "About",
     "section": "",
     "text": "Something about this site."
-  },
-  {
-    "objectID": "projectsBlog.html",
-    "href": "projectsBlog.html",
-    "title": "Projects Blog",
-    "section": "",
-    "text": "Data Analysis: Bike-Sharing Program in Chicago\n\n\n\n\n\n\ntime-series\n\n\ngeospatial\n\n\n\n“Case study on the bike-sharing program in Chicago, Divvy-Bikes.” \n\n\n\n\n\nMar 22, 2022\n\n\n\n\n\n\nNo matching items"
   }
 ]
