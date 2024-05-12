@@ -3,4 +3,6 @@ title: ""
 toc: false
 ---
 
-building site
+Hello.
+
+Please check out the Projects Blog in the navigation menu of this site. I just haven't gotten around to creating a proper Home page yet, among other things. Within a few weeks I should have something more professional up.

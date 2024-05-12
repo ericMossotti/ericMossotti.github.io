@@ -1,13 +1,16 @@
 ---
-title: "Data Analysis: Bike-Sharing Program in Chicago"
-date: 3-22-2022
-categories: [time-series, geospatial]
+title: "Bike-Sharing in the Streets of Chicago"
+date: 05-12-2024
+categories: [analysis, tables, plots, statistics, epidemiology, geospatial]
 description: | 
-    "Case study on the bike-sharing program in Chicago, Divvy-Bikes."
-draft: false
+    "An independent data analysis project centered around bike-sharing in Chicago."
+draft: true
 code-link: true
+image: "SiteImages/epiflow_bikeShare.png"
 ---
 
-Data analysis project I've been working on:
+Getting towards the end. Should be less than a week before first final draft gets pushed out. Right now, I consider both this blog entry and the data analysis project a draft.
+
+For the data analysis project I've been working on (click the cyclist) :
 
 [🚴](https://ericMossotti.github.io/Bike_Share/)

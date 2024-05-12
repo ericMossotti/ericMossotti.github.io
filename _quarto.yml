@@ -19,12 +19,7 @@ website:
 
 format:
   html:
-    theme:
-        light: morph
-        dark: solar
-    #    - styles.sass
-   # theme: cosmo
-   # css: styles.css
+    theme: darkly
     toc: true
     page-layout: full
 
