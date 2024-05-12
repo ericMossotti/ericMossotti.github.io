@@ -4,9 +4,9 @@ date: 05-12-2024
 categories: [analysis, tables, plots, statistics, epidemiology, geospatial]
 description: | 
     "An independent data analysis project centered around bike-sharing in Chicago."
-draft: true
+draft: false
 code-link: true
-image: "SiteImages/epiflow_bikeShare.png"
+image: "epiflow_bikeShare.png"
 ---
 
 Getting towards the end. Should be less than a week before first final draft gets pushed out. Right now, I consider both this blog entry and the data analysis project a draft.
