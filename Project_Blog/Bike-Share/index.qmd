@@ -1,16 +1,39 @@
 ---
-title: "Bike-Sharing in the Streets of Chicago"
-date: 05-12-2024
-categories: [analysis, tables, plots, statistics, epidemiology, geospatial]
+title: "Bike-Share Analysis: The Experience"
+date: 05-24-2024
+categories: [analysis, geographic-location, statistics, logistic regression, chi-squared]
 description: | 
-    "An independent data analysis project centered around bike-sharing in Chicago."
+    An end-to-end data analytics report project centered around bike-sharing in Chicago.
 draft: false
 code-link: true
 image: "epiflow_bikeShare.png"
+
+filters:
+     - nutshell
 ---
 
-Getting towards the end. Should be less than a week before first final draft gets pushed out. Right now, I consider both this blog entry and the data analysis project a draft.
+Data analysis, or more like, persistence seems to be the key to understanding. Quite a lot was learned, perhaps approaching the full-stack of web development, in terms of software engineering. A combination of research, testing, database design, front-end web development, and statistical programming brought this project fully home. The dataset itself is real, anonymized, data.
 
-For the data analysis project I've been working on (click the cyclist) :
+**If you wish to skip to the full report:**
 
-[🚴](https://ericMossotti.github.io/Bike_Share/)
+<https://ericmossotti.github.io/Bike_Share/>
+
+I took inspiration from a lot of past learning in how I approached this dataset. It struck me as odd that I had not been applying most of my skill-set very much. Much of my workplace experience had been with Excel up to this point, or by just writing down formulas by hand in the lab. I would say that Excel is quite deep and useful in the general workplace. However, the weight of the experiences from many CS courses over the years, which introduced me to [:a boring list of langs I learned](#LangsList), were too much to ignore. In short, it was time to take things to the next level and take a big step towards long-held goals. 🥅
+
+I will likely update this project from time to time, then probably less as time goes on and I utilize more of my skill set in the sciences on future projects. That said, I disclose that my degree is in Chemistry, technically, though I think engineering makes things more fun. Engineering and science should have never been separated into distinct four-year degrees in education, honestly. Perhaps this project helps chip away the bridge that divides.
+
+::: p-3
+[*To myself, I now admit, \
+That cycles doth engross my thoughts,\
+To the degree I've forgotten all else.* ]{.text-center}
+
+[*Nay, I jest! \
+Though likely fate hath so ordain'd, \
+That I shall ride upon two wheels again.*[^1]]{.text-center}
+:::
+
+[^1]: Shakespeare doesn't have to know about this.
+
+## :x LangsList
+
+C++, Java, R, Python
