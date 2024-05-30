@@ -1,6 +1,6 @@
 ---
-title: "Projects Blog"
-subtitle: "Like a portfolio."
+title: "Plog"
+subtitle: "Projects Blog"
 
 listing:
     - id: portfolio
