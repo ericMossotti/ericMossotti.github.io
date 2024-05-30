@@ -1,21 +1,18 @@
 project:
   type: website
-    #site-url: https://ericMossotti.github.io/Bike_Share
-#  output-dir: docs
-#  execute: freeze: true
 
 website:
-  title: ""
+  title: "Eric Mossotti"
   navbar:
     left:
       - href: index.qmd
         text: Home
       - href: projectsBlog.qmd
-        text: "Project Blog"
+        text: "Plog"
       - about.qmd
     page-footer:
         center:
-            - text: "Data Analysis Portfolio"
+            - text: "Data Developments"
 
 format:
   html:
