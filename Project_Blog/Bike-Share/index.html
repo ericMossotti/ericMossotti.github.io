@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-05-12">
-<meta name="description" content="“An independent data analysis project centered around bike-sharing in Chicago.”">
+<meta name="dcterms.date" content="2024-05-31">
+<meta name="description" content="An end-to-end data analytics report project centered around bike-sharing in Chicago.">
 
-<title>Bike-Sharing in the Streets of Chicago</title>
+<title>Eric Mossotti - Bike-Share Analysis: The Experience</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -41,6 +41,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-contrib/nutshell-1.0.7/nutshell.js"></script>
+<script src="../../site_libs/quarto-contrib/nutshell-1.0.7/nutshell_options.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,6 +70,22 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>
+
+      .quarto-title-block .quarto-title-banner h1,
+      .quarto-title-block .quarto-title-banner h2,
+      .quarto-title-block .quarto-title-banner h3,
+      .quarto-title-block .quarto-title-banner h4,
+      .quarto-title-block .quarto-title-banner h5,
+      .quarto-title-block .quarto-title-banner h6
+      {
+        color: yellow;
+      }
+
+      .quarto-title-block .quarto-title-banner {
+        color: yellow;
+      }
+</style>
 
 
 </head>
@@ -78,6 +96,11 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Eric Mossotti</span>
+    </a>
+  </div>
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
@@ -90,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../projectsBlog.html"> 
-<span class="menu-text">Project Blog</span></a>
+<span class="menu-text">Plog</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../about.html"> 
@@ -107,19 +130,19 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page">
-      <h1 class="title">Bike-Sharing in the Streets of Chicago</h1>
+      <h1 class="title">Bike-Share Analysis: The Experience</h1>
                   <div>
         <div class="description">
-          <p>“An independent data analysis project centered around bike-sharing in Chicago.”</p>
+          <p>An end-to-end data analytics report project centered around bike-sharing in Chicago.</p>
         </div>
       </div>
                           <div class="quarto-categories">
                 <div class="quarto-category">analysis</div>
-                <div class="quarto-category">tables</div>
-                <div class="quarto-category">plots</div>
+                <div class="quarto-category">web-dev</div>
+                <div class="quarto-category">R</div>
                 <div class="quarto-category">statistics</div>
-                <div class="quarto-category">epidemiology</div>
-                <div class="quarto-category">geospatial</div>
+                <div class="quarto-category">logistic regression</div>
+                <div class="quarto-category">chi-squared</div>
               </div>
                   </div>
   </div>
@@ -131,7 +154,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">May 12, 2024</p>
+        <p class="date">May 31, 2024</p>
       </div>
     </div>
     
@@ -150,11 +173,27 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>Getting towards the end. Should be less than a week before first final draft gets pushed out. Right now, I consider both this blog entry and the data analysis project a draft.</p>
-<p>For the data analysis project I’ve been working on (click the cyclist) :</p>
-<p><a href="https://ericMossotti.github.io/Bike_Share/">🚴</a></p>
+<p>Persistent data analysis proved the key to understanding. Substantial knowledge was gained, resembling some level of full-stack web development proficiency. A combination of research, testing, database design, front-end development, and statistical programming brought this project home. The substantial effort was worthwhile, I’d say.</p>
+<div class="p-3 fs-4">
+<p><strong>Full report page:</strong></p>
+<p><span class="a"><a href="https://ericmossotti.github.io/Bike_Share/" class="uri">Bike Sharing in the Streets of Chicago</a></span></p>
+</div>
+<p>I took inspiration from a wealth of past learning experiences in approaching this dataset. However, it struck me as peculiar that I had not been extensively applying the majority of my skill set. Much of my workplace experience had been confined to Excel or manually writing formulas in the lab. While Excel is undoubtedly a powerful and valuable tool in the general workplace, the cumulative experiences from numerous computer science courses over the years, which introduced me to <span style="color: red"><a href="#LangsList">:a boring list of langs I learned</a></span>, were too significant to ignore. In essence, it was time to elevate things to the next level and take a big stride towards longstanding goals. 🥅</p>
+<p>I will likely periodically update and refine this project, though the frequency of updates may diminish over time. My mind wanders towards other datasets that can more comprehensively leverage my background and expertise in the natural and physical sciences. It’s worth noting that, although my major is technically in chemistry, I find engineering adds engagement and believe that the separation of science and engineering into distinct four-year degrees was an unfortunate division. Perhaps this project can contribute to bridging the gap between these two intertwined disciplines.</p>
+<div class="p-3">
+<p><span style="color: #66ffc2"><em>To myself, I now admit,<br>
+That cycles doth engross my thoughts,<br>
+I forget all else.</em></span></p>
+<p><span style="color: #66ffc2"><em>Nay, I jest!<br>
+Though likely fate hath so ordain’d,<br>
+That I shall ride upon two wheels again.</em></span></p>
+</div>
+<section id="x-langslist" class="level2">
+<h2 class="anchored" data-anchor-id="x-langslist">:x LangsList</h2>
+<p>C++, C#, Java, R, Python</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
