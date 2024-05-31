@@ -1,39 +1,41 @@
 ---
 title: "Bike-Share Analysis: The Experience"
-date: 05-24-2024
-categories: [analysis, geographic-location, statistics, logistic regression, chi-squared]
+date: 05-31-2024
+categories: [analysis, web-dev, R, statistics, logistic regression, chi-squared]
 description: | 
     An end-to-end data analytics report project centered around bike-sharing in Chicago.
 draft: false
 code-link: true
 image: "epiflow_bikeShare.png"
 
+title-block-banner-color: yellow
+title-meta: Bike-Sharing Analysis
 filters:
      - nutshell
 ---
 
-Data analysis, or more like, persistence seems to be the key to understanding. Quite a lot was learned, perhaps approaching the full-stack of web development, in terms of software engineering. A combination of research, testing, database design, front-end web development, and statistical programming brought this project fully home. The dataset itself is real, anonymized, data.
+Persistent data analysis proved the key to understanding. Substantial knowledge was gained, resembling some level of full-stack web development proficiency. A combination of research, testing, database design, front-end development, and statistical programming brought this project home. The substantial effort was worthwhile, I'd say.
 
-**If you wish to skip to the full report:**
+::: {.p-3 .fs-4}
+**Full report page:**
 
-<https://ericmossotti.github.io/Bike_Share/>
-
-I took inspiration from a lot of past learning in how I approached this dataset. It struck me as odd that I had not been applying most of my skill-set very much. Much of my workplace experience had been with Excel up to this point, or by just writing down formulas by hand in the lab. I would say that Excel is quite deep and useful in the general workplace. However, the weight of the experiences from many CS courses over the years, which introduced me to [:a boring list of langs I learned](#LangsList), were too much to ignore. In short, it was time to take things to the next level and take a big step towards long-held goals. 🥅
-
-I will likely update this project from time to time, then probably less as time goes on and I utilize more of my skill set in the sciences on future projects. That said, I disclose that my degree is in Chemistry, technically, though I think engineering makes things more fun. Engineering and science should have never been separated into distinct four-year degrees in education, honestly. Perhaps this project helps chip away the bridge that divides.
-
-::: p-3
-[*To myself, I now admit, \
-That cycles doth engross my thoughts,\
-To the degree I've forgotten all else.* ]{.text-center}
-
-[*Nay, I jest! \
-Though likely fate hath so ordain'd, \
-That I shall ride upon two wheels again.*[^1]]{.text-center}
+[[Bike Sharing in the Streets of Chicago](https://ericmossotti.github.io/Bike_Share/){.uri}]{.a}
 :::
 
-[^1]: Shakespeare doesn't have to know about this.
+I took inspiration from a wealth of past learning experiences in approaching this dataset. However, it struck me as peculiar that I had not been extensively applying the majority of my skill set. Much of my workplace experience had been confined to Excel or manually writing formulas in the lab. While Excel is undoubtedly a powerful and valuable tool in the general workplace, the cumulative experiences from numerous computer science courses over the years, which introduced me to [[:a boring list of langs I learned](#LangsList)]{style="color: red"}, were too significant to ignore. In essence, it was time to elevate things to the next level and take a big stride towards longstanding goals. 🥅
+
+I will likely periodically update and refine this project, though the frequency of updates may diminish over time. My mind wanders towards other datasets that can more comprehensively leverage my background and expertise in the natural and physical sciences. It's worth noting that, although my major is technically in chemistry, I find engineering adds engagement and believe that the separation of science and engineering into distinct four-year degrees was an unfortunate division. Perhaps this project can contribute to bridging the gap between these two intertwined disciplines.
+
+::: p-3
+[*To myself, I now admit,\
+That cycles doth engross my thoughts,\
+I forget all else.*]{style="color: #66ffc2"}
+
+[*Nay, I jest!\
+Though likely fate hath so ordain'd,\
+That I shall ride upon two wheels again.*]{style="color: #66ffc2"}
+:::
 
 ## :x LangsList
 
-C++, Java, R, Python
+C++, C#, Java, R, Python
