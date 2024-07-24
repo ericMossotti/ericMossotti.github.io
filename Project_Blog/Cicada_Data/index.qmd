@@ -1,0 +1,28 @@
+---
+title: "Genomics, Allergies, and Data Sci: An Unexpected Adventure"
+date: 07-23-2024
+date-modified: last-modified
+categories: [genomics, Python, R, Bash]
+description: | 
+    Discussing the context, process and experience of reproducing genomics stats.
+draft: false
+code-link: true
+image: "dream_cicada1.jpg"
+
+#title-block-banner-color: yellow
+title-meta: genomics-adventure
+---
+
+Imagine being fascinated by the tiny building blocks of life—so much so that you dive deep into the world of genomics. That's exactly what I did, and my latest adventure took me to the data-rich world of DNA Zoo.
+
+Why the cicada, you ask? Well, it’s a funny story—not so funny at the time, though. I recently had the worst allergic reaction of my life, ending up in urgent-care with a swollen face and a nasty rash. The culprit? Possibly the double brood of cicadas wreaking havoc outside. As someone with a slight dust-mite allergy, it made sense after I had been mowing grass and hiking the previous day. This unexpected encounter with nature pushed me to dive deeper into the data on these noisy critters.
+
+Eager to apply my college studies in genomics, I embarked on a quest to find relevant datasets and bioinformatics tools. Without a clear plan at first, the journey led me to fascinating data sources and pushed my limits. This project evolved into more than just a personal challenge; it became a way to help others learn about bioinformatics as well.
+
+Discovering Quarto a year ago was a game-changer for me. It’s been an incredible platform to hone my voice in data science and beyond. While Jupyter Notebooks and Kaggle have their strengths, Quarto's flexibility, and wide-ranging use-cases make it my preferred choice for showcasing my work. Being able to combine R, Python and Bash code within the same reproducible virtual project environment is something most probably have never seen.
+
+Through this medium, I’ve not only improved my front-end development skills but also enhanced my back-end analysis and organization. This journey from data acquisition to presentation has been both challenging and rewarding, and I’m excited to continue exploring the endless possibilities in genomics and bioinformatics.
+
+::: {style="font-size: x-large"}
+[Cicada Data (quarto.pub)](https://eric-mossotti.quarto.pub/cicada_data/)
+:::
