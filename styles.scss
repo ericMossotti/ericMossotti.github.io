@@ -1,24 +1,49 @@
 /*-- scss:defaults --*/
+$theme: "darkly" !default;
 
-// Colors
-/*
-$color: #000 !default
-$light: lighten($color, 15%) !default
-$dark: darken($color, 15%) !default
-*/
+$link-unvisited: Lavender !default;
+$link-visited: Plum !default;
+$link-hover: PaleTurquoise !default;
+
+a {
+  &:link {
+    color: $link-unvisited;
+    text-decoration: none;
+  }
+  &:visited {
+    color: $link-visited;
+  }
+  &:hover, &:focus {
+    color: $link-hover;
+    text-decoration: underline;
+  }
+  &:active {
+    color: $link-hover;
+  }
+}
+  
+
 p {
-    max-width: 750px;
+  max-width: 70ch; // Limits line length to approximately 65 characters
+  //margin-left: auto;
+  //margin-right: auto;
+  color: Snow;
 }
 
 
+@media (max-width: 600px) {
+    
+  p {
+    max-width: 100%;
+  }
+}
+
+/*-- scss:classes --*/
+
+.quarto-title-banner {
+  
+  background: linear-gradient(
+  to bottom, #375a7f, #222222) !important;
+}
 
 
-/*    color: $color
-    font-family: "Times New Roman", serif
-    font-size: medium
-    &.light
-        color: $light
-    &.dark
-        color: $dark
-*/
-/*-- scss:rules --*/
