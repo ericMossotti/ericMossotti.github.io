@@ -1,14 +1,14 @@
 ---
 title: "Bike-Share Analysis: The Experience"
 date: 05-31-2024
-categories: [analysis, web-dev, R, statistics, logistic regression, chi-squared]
+categories: [data analysis, R]
 description: | 
     An end-to-end data analytics report project centered around bike-sharing in Chicago.
 draft: false
 code-link: true
 image: "epiflow_bikeShare.png"
 
-title-block-banner-color: yellow
+#title-block-banner-color: yellow
 title-meta: Bike-Sharing Analysis
 filters:
      - nutshell
