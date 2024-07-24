@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Eric Mossotti",
+    "section": "",
+    "text": "Hello.\nPlease check out the Projects Blog in the navigation menu of this site. I just haven’t gotten around to creating a proper Home page yet, among other things. Within a few weeks I should have something more professional up."
+  },
+  {
     "objectID": "Project_Blog/Bike-Share/index.html",
     "href": "Project_Blog/Bike-Share/index.html",
     "title": "Bike-Share Analysis: The Experience",
@@ -14,13 +21,6 @@
     "text": ":x LangsList\nC++, C#, Java, R, Python"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Eric Mossotti",
-    "section": "",
-    "text": "Hello.\nPlease check out the Projects Blog in the navigation menu of this site. I just haven’t gotten around to creating a proper Home page yet, among other things. Within a few weeks I should have something more professional up."
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
@@ -32,6 +32,13 @@
     "href": "projectsBlog.html",
     "title": "Plog",
     "section": "",
-    "text": "Bike-Share Analysis: The Experience\n\n\n\n\n\n\nanalysis\n\n\nweb-dev\n\n\nR\n\n\nstatistics\n\n\nlogistic regression\n\n\nchi-squared\n\n\n\nAn end-to-end data analytics report project centered around bike-sharing in Chicago. \n\n\n\n\n\nMay 31, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "Bike-Share Analysis: The Experience\n\n\n\n\n\n\ndata analysis\n\n\nR\n\n\n\nAn end-to-end data analytics report project centered around bike-sharing in Chicago. \n\n\n\n\n\nMay 31, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nGenomics, Allergies, and Data Sci: An Unexpected Adventure\n\n\n\n\n\n\ngenomics\n\n\nPython\n\n\nR\n\n\nBash\n\n\n\nDiscussing the context, process and experience of reproducing genomics stats. \n\n\n\n\n\nJul 23, 2024\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "Project_Blog/Cicada_Data/index.html",
+    "href": "Project_Blog/Cicada_Data/index.html",
+    "title": "Genomics, Allergies, and Data Sci: An Unexpected Adventure",
+    "section": "",
+    "text": "Imagine being fascinated by the tiny building blocks of life—so much so that you dive deep into the world of genomics. That’s exactly what I did, and my latest adventure took me to the data-rich world of DNA Zoo.\nWhy the cicada, you ask? Well, it’s a funny story—not so funny at the time, though. I recently had the worst allergic reaction of my life, ending up in urgent-care with a swollen face and a nasty rash. The culprit? Possibly the double brood of cicadas wreaking havoc outside. As someone with a slight dust-mite allergy, it made sense after I had been mowing grass and hiking the previous day. This unexpected encounter with nature pushed me to dive deeper into the data on these noisy critters.\nEager to apply my college studies in genomics, I embarked on a quest to find relevant datasets and bioinformatics tools. Without a clear plan at first, the journey led me to fascinating data sources and pushed my limits. This project evolved into more than just a personal challenge; it became a way to help others learn about bioinformatics as well.\nDiscovering Quarto a year ago was a game-changer for me. It’s been an incredible platform to hone my voice in data science and beyond. While Jupyter Notebooks and Kaggle have their strengths, Quarto’s flexibility, and wide-ranging use-cases make it my preferred choice for showcasing my work. Being able to combine R, Python and Bash code within the same reproducible virtual project environment is something most probably have never seen.\nThrough this medium, I’ve not only improved my front-end development skills but also enhanced my back-end analysis and organization. This journey from data acquisition to presentation has been both challenging and rewarding, and I’m excited to continue exploring the endless possibilities in genomics and bioinformatics.\n\nCicada Data (quarto.pub)"
   }
 ]

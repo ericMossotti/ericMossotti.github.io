@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2024-07-23">
+<meta name="description" content="Discussing the context, process and experience of reproducing genomics stats.">
 
-<title>Eric Mossotti</title>
+<title>Genomics, Allergies, and Data Sci: An Unexpected Adventure – Eric Mossotti</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +25,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,11 +75,11 @@ ul.task-list li input[type="checkbox"] {
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Eric Mossotti</span>
     </a>
   </div>
@@ -88,15 +90,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./projectsBlog.html"> 
+    <a class="nav-link" href="../../projectsBlog.html"> 
 <span class="menu-text">Plog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -107,18 +109,64 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page">
+      <h1 class="title">Genomics, Allergies, and Data Sci: An Unexpected Adventure</h1>
+                  <div>
+        <div class="description">
+          <p>Discussing the context, process and experience of reproducing genomics stats.</p>
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">genomics</div>
+                <div class="quarto-category">Python</div>
+                <div class="quarto-category">R</div>
+                <div class="quarto-category">Bash</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-page">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">July 23, 2024</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Modified</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">July 24, 2024</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
 
 
 
 
-<p>Hello.</p>
-<p>Please check out the Projects Blog in the navigation menu of this site. I just haven’t gotten around to creating a proper Home page yet, among other things. Within a few weeks I should have something more professional up.</p>
+
+<p>Imagine being fascinated by the tiny building blocks of life—so much so that you dive deep into the world of genomics. That’s exactly what I did, and my latest adventure took me to the data-rich world of DNA Zoo.</p>
+<p>Why the cicada, you ask? Well, it’s a funny story—not so funny at the time, though. I recently had the worst allergic reaction of my life, ending up in urgent-care with a swollen face and a nasty rash. The culprit? Possibly the double brood of cicadas wreaking havoc outside. As someone with a slight dust-mite allergy, it made sense after I had been mowing grass and hiking the previous day. This unexpected encounter with nature pushed me to dive deeper into the data on these noisy critters.</p>
+<p>Eager to apply my college studies in genomics, I embarked on a quest to find relevant datasets and bioinformatics tools. Without a clear plan at first, the journey led me to fascinating data sources and pushed my limits. This project evolved into more than just a personal challenge; it became a way to help others learn about bioinformatics as well.</p>
+<p>Discovering Quarto a year ago was a game-changer for me. It’s been an incredible platform to hone my voice in data science and beyond. While Jupyter Notebooks and Kaggle have their strengths, Quarto’s flexibility, and wide-ranging use-cases make it my preferred choice for showcasing my work. Being able to combine R, Python and Bash code within the same reproducible virtual project environment is something most probably have never seen.</p>
+<p>Through this medium, I’ve not only improved my front-end development skills but also enhanced my back-end analysis and organization. This journey from data acquisition to presentation has been both challenging and rewarding, and I’m excited to continue exploring the endless possibilities in genomics and bioinformatics.</p>
+<div style="font-size: x-large">
+<p><a href="https://eric-mossotti.quarto.pub/cicada_data/">Cicada Data (quarto.pub)</a></p>
+</div>
 
 
 
