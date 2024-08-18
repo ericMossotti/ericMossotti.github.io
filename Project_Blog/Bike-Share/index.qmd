@@ -1,5 +1,5 @@
 ---
-title: "Bike-Share Analysis: The Experience"
+title: "Data-Driven Bike Share Analysis"
 date: 05-31-2024
 categories: [data analysis, R]
 description: | 
@@ -8,7 +8,6 @@ draft: false
 code-link: true
 image: "epiflow_bikeShare.png"
 
-#title-block-banner-color: yellow
 title-meta: Bike-Sharing Analysis
 filters:
      - nutshell
