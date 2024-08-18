@@ -9,14 +9,14 @@
   {
     "objectID": "Project_Blog/Bike-Share/index.html",
     "href": "Project_Blog/Bike-Share/index.html",
-    "title": "Bike-Share Analysis: The Experience",
+    "title": "Data-Driven Bike Share Analysis",
     "section": "",
     "text": "Persistent data analysis proved the key to understanding. Substantial knowledge was gained, resembling some level of full-stack web development proficiency. A combination of research, testing, database design, front-end development, and statistical programming brought this project home. The substantial effort was worthwhile, I’d say.\nI took inspiration from a wealth of past learning experiences in approaching this dataset. However, it struck me as peculiar that I had not been extensively applying the majority of my skill set. Much of my workplace experience had been confined to Excel or manually writing formulas in the lab. While Excel is undoubtedly a powerful and valuable tool in the general workplace, the cumulative experiences from numerous computer science courses over the years, which introduced me to :a boring list of langs I learned, were too significant to ignore. In essence, it was time to elevate things to the next level and take a big stride towards longstanding goals. 🥅\nI will likely periodically update and refine this project, though the frequency of updates may diminish over time. My mind wanders towards other datasets that can more comprehensively leverage my background and expertise in the natural and physical sciences. It’s worth noting that, although my major is technically in chemistry, I find engineering adds engagement and believe that the separation of science and engineering into distinct four-year degrees was an unfortunate division. Perhaps this project can contribute to bridging the gap between these two intertwined disciplines."
   },
   {
     "objectID": "Project_Blog/Bike-Share/index.html#x-langslist",
     "href": "Project_Blog/Bike-Share/index.html#x-langslist",
-    "title": "Bike-Share Analysis: The Experience",
+    "title": "Data-Driven Bike Share Analysis",
     "section": ":x LangsList",
     "text": ":x LangsList\nC++, C#, Java, R, Python"
   },
@@ -28,17 +28,17 @@
     "text": "Something about this site."
   },
   {
-    "objectID": "projectsBlog.html",
-    "href": "projectsBlog.html",
-    "title": "Plog",
-    "section": "",
-    "text": "Bike-Share Analysis: The Experience\n\n\n\n\n\n\ndata analysis\n\n\nR\n\n\n\nAn end-to-end data analytics report project centered around bike-sharing in Chicago. \n\n\n\n\n\nMay 31, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nGenomics, Allergies, and Data Sci: An Unexpected Adventure\n\n\n\n\n\n\ngenomics\n\n\nPython\n\n\nR\n\n\nBash\n\n\n\nDiscussing the context, process and experience of reproducing genomics stats. \n\n\n\n\n\nJul 23, 2024\n\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "Project_Blog/Cicada_Data/index.html",
     "href": "Project_Blog/Cicada_Data/index.html",
     "title": "Genomics, Allergies, and Data Sci: An Unexpected Adventure",
     "section": "",
     "text": "Imagine being fascinated by the tiny building blocks of life—so much so that you dive deep into the world of genomics. That’s exactly what I did, and my latest adventure took me to the data-rich world of DNA Zoo.\nWhy the cicada, you ask? Well, it’s a funny story—not so funny at the time, though. I recently had the worst allergic reaction of my life, ending up in urgent-care with a swollen face and a nasty rash. The culprit? Possibly the double brood of cicadas wreaking havoc outside. As someone with a slight dust-mite allergy, it made sense after I had been mowing grass and hiking the previous day. This unexpected encounter with nature pushed me to dive deeper into the data on these noisy critters.\nEager to apply my college studies in genomics, I embarked on a quest to find relevant datasets and bioinformatics tools. Without a clear plan at first, the journey led me to fascinating data sources and pushed my limits. This project evolved into more than just a personal challenge; it became a way to help others learn about bioinformatics as well.\nDiscovering Quarto a year ago was a game-changer for me. It’s been an incredible platform to hone my voice in data science and beyond. While Jupyter Notebooks and Kaggle have their strengths, Quarto’s flexibility, and wide-ranging use-cases make it my preferred choice for showcasing my work. Being able to combine R, Python and Bash code within the same reproducible virtual project environment is something most probably have never seen.\nThrough this medium, I’ve not only improved my front-end development skills but also enhanced my back-end analysis and organization. This journey from data acquisition to presentation has been both challenging and rewarding, and I’m excited to continue exploring the endless possibilities in genomics and bioinformatics.\n\nCicada Data (quarto.pub)"
+  },
+  {
+    "objectID": "projectsBlog.html",
+    "href": "projectsBlog.html",
+    "title": "Plog",
+    "section": "",
+    "text": "Data-Driven Bike Share Analysis\n\n\n\n\n\n\ndata analysis\n\n\nR\n\n\n\nAn end-to-end data analytics report project centered around bike-sharing in Chicago. \n\n\n\n\n\nMay 31, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nGenomics, Allergies, and Data Sci: An Unexpected Adventure\n\n\n\n\n\n\ngenomics\n\n\nPython\n\n\nR\n\n\nBash\n\n\n\nDiscussing the context, process and experience of reproducing genomics stats. \n\n\n\n\n\nJul 23, 2024\n\n\n\n\n\n\nNo matching items"
   }
 ]
