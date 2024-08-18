@@ -26,16 +26,6 @@ I took inspiration from a wealth of past learning experiences in approaching thi
 
 I will likely periodically update and refine this project, though the frequency of updates may diminish over time. My mind wanders towards other datasets that can more comprehensively leverage my background and expertise in the natural and physical sciences. It's worth noting that, although my major is technically in chemistry, I find engineering adds engagement and believe that the separation of science and engineering into distinct four-year degrees was an unfortunate division. Perhaps this project can contribute to bridging the gap between these two intertwined disciplines.
 
-::: p-3
-[*To myself, I now admit,\
-That cycles doth engross my thoughts,\
-I forget all else.*]{style="color: #66ffc2"}
-
-[*Nay, I jest!\
-Though likely fate hath so ordain'd,\
-That I shall ride upon two wheels again.*]{style="color: #66ffc2"}
-:::
-
 ## :x LangsList
 
 C++, C#, Java, R, Python
